@@ -24,12 +24,12 @@ public class CartReceiver : MonoBehaviour
         if (Keyboard.current.mKey.isPressed)
         {
             m_cartPotision.m_Speed = 3;
-            //m_thirdPersonController.ChangeMoveAnimation();
         }
         else
         {
             m_cartPotision.m_Speed = 0;
         }
 
+        m_thirdPersonController.ChangeMoveAnimation(m_cartPotision.m_Speed);
     }
 }

@@ -319,7 +319,6 @@ namespace StarterAssets
         public void ChangeMoveAnimation()
         {
             MoveSpeed = 3;
-            Move();
         }
     }
 }

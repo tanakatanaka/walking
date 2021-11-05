@@ -81,7 +81,6 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
-        private int _animIDRemotMotionSpeed;
 
         private Animator _animator;
         private CharacterController _controller;
@@ -183,7 +182,7 @@ namespace StarterAssets
             if (_hasAnimator)
             {
                 _animator.SetFloat(_animIDSpeed, _animationBlend);
-                _animator.SetFloat(_animIDRemotMotionSpeed, 1);
+                _animator.SetFloat(_animIDMotionSpeed, 1);
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using System.Collections;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -88,10 +89,12 @@ namespace StarterAssets
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
-
         private bool _hasAnimator;
 
-        private bool _isMoving = false;
+        private Quaternion _targetRot;
+        private Quaternion _startRot;
+        private float _sec = 0.0f;
+        private bool _isRotation = false;
 
         private void Awake()
         {
@@ -118,6 +121,16 @@ namespace StarterAssets
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
+
+            if (_isRotation)
+            {
+                _sec += Time.deltaTime;
+                const float speed = 2f;
+                transform.rotation = Quaternion.Lerp(_startRot, _targetRot, _sec * speed);
+
+                if (_sec > 1 / speed) _isRotation = false;
+                return;
+            }
 
             JumpAndGravity();
             GroundedCheck();
@@ -185,6 +198,21 @@ namespace StarterAssets
                 _animator.SetFloat(_animIDMotionSpeed, 1);
             }
         }
+        
+        public void Rotate()
+        {
+            if (_isRotation) return;
+  
+            _startRot = transform.rotation;
+            var roteangle = 180f;
+            _targetRot = Quaternion.AngleAxis(roteangle, Vector3.up) * transform.rotation;
+            _sec = 0;
+            _isRotation = true;
+
+        }
+
+      
+
 
         private void JumpAndGravity()
         {

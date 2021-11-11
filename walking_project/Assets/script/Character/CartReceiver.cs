@@ -8,18 +8,29 @@ using UnityEngine.InputSystem;
 public class CartReceiver : MonoBehaviour
 {
     [SerializeField] private CinemachineDollyCart m_cartPotision;
-    [SerializeField] private RadioController m_thirdPersonController;
+    private RadioController m_redioController;
+    bool m_Initialized = false;
 
-    private void Start()
+    public void Initialize(RadioController radioController)
     {
-        m_thirdPersonController.MoveSpeed = m_cartPotision.m_Speed;
+        m_redioController = radioController;
+        m_redioController.MoveSpeed = m_cartPotision.m_Speed;
+        m_Initialized = true;
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if (m_Initialized == false) return;
+
         //transform.position = m_cartPotision.transform.position;
+
+        if (Keyboard.current.nKey.isPressed)
+        {
+            m_redioController.Rotate();
+        }
+
 
         if (Keyboard.current.mKey.isPressed)
         {
@@ -30,6 +41,6 @@ public class CartReceiver : MonoBehaviour
             m_cartPotision.m_Speed = 0;
         }
 
-        m_thirdPersonController.ChangeMoveAnimation(m_cartPotision.m_Speed);
+        m_redioController.ChangeMoveAnimation(m_cartPotision.m_Speed);
     }
 }

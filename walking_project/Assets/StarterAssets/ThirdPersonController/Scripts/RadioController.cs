@@ -94,7 +94,7 @@ namespace StarterAssets
         private Quaternion _targetRot;
         private Quaternion _startRot;
         private float _sec = 0.0f;
-        private bool _isRotation = false;
+        public bool _isRotation = false;
 
         private void Awake()
         {
@@ -127,7 +127,6 @@ namespace StarterAssets
                 _sec += Time.deltaTime;
                 const float speed = 2f;
                 transform.rotation = Quaternion.Lerp(_startRot, _targetRot, _sec * speed);
-
                 if (_sec > 1 / speed) _isRotation = false;
                 return;
             }
@@ -208,11 +207,7 @@ namespace StarterAssets
             _targetRot = Quaternion.AngleAxis(roteangle, Vector3.up) * transform.rotation;
             _sec = 0;
             _isRotation = true;
-
         }
-
-      
-
 
         private void JumpAndGravity()
         {

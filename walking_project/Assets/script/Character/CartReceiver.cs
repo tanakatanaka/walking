@@ -10,6 +10,7 @@ public class CartReceiver : MonoBehaviour
     [SerializeField] private CinemachineDollyCart m_cartPotision;
     private RadioController m_redioController;
     bool m_Initialized = false;
+    int reverse = 1;
 
     public void Initialize(RadioController radioController)
     {
@@ -28,19 +29,23 @@ public class CartReceiver : MonoBehaviour
 
         if (Keyboard.current.nKey.isPressed)
         {
-            m_redioController.Rotate();
+            if (m_redioController._isRotation == false)
+            {
+                m_redioController.Rotate();
+                reverse = -reverse;
+            }
         }
 
 
         if (Keyboard.current.mKey.isPressed)
         {
-            m_cartPotision.m_Speed = 3;
+            m_cartPotision.m_Speed = 3 * reverse;
         }
         else
         {
             m_cartPotision.m_Speed = 0;
         }
 
-        m_redioController.ChangeMoveAnimation(m_cartPotision.m_Speed);
+        m_redioController.ChangeMoveAnimation(Mathf.Abs(m_cartPotision.m_Speed) );
     }
 }

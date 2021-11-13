@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634206236442304642}
   m_Layer: 0
-  m_Name: RailController
+  m_Name: rail_controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

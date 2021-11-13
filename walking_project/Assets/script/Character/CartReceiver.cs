@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class CartReceiver : MonoBehaviour
 {
-    [SerializeField] private CinemachineDollyCart m_cartPotision;
+    [SerializeField] private CinemachineDollyCart _cartPotision;
     private RadioController m_redioController;
     bool m_Initialized = false;
     int reverse = 1;
@@ -15,8 +15,13 @@ public class CartReceiver : MonoBehaviour
     public void Initialize(RadioController radioController)
     {
         m_redioController = radioController;
-        m_redioController.MoveSpeed = m_cartPotision.m_Speed;
+        m_redioController.MoveSpeed = _cartPotision.m_Speed;
         m_Initialized = true;
+    }
+
+    public void SetNextCart(CinemachineDollyCart cartPotision)
+    {
+        _cartPotision = cartPotision;
     }
 
 
@@ -39,13 +44,13 @@ public class CartReceiver : MonoBehaviour
 
         if (Keyboard.current.mKey.isPressed)
         {
-            m_cartPotision.m_Speed = 3 * reverse;
+            _cartPotision.m_Speed = 3 * reverse;
         }
         else
         {
-            m_cartPotision.m_Speed = 0;
+            _cartPotision.m_Speed = 0;
         }
 
-        m_redioController.ChangeMoveAnimation(Mathf.Abs(m_cartPotision.m_Speed) );
+        m_redioController.ChangeMoveAnimation(Mathf.Abs(_cartPotision.m_Speed) );
     }
 }

@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
+using Cinemachine;
 
 public class CharacterManager : MonoBehaviour
 {
     [SerializeField] private CartReceiver m_cartReceiver;
     [SerializeField] private RadioController m_radioController;
-    //[SerializeField] private RadioController m_radioController;
 
     // Start is called before the first frame update
-    void Start()
+    public void Initialize()
     {
         m_cartReceiver.Initialize(m_radioController);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetNextCart(CinemachineDollyCart dollyCart)
     {
-        
+        m_cartReceiver.SetNextCart(dollyCart);
+        m_radioController.transform.SetParent(dollyCart.transform);
     }
+
+
 }

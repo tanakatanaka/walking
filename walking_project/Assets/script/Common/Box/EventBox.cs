@@ -6,9 +6,12 @@ using Cinemachine;
 
 public class EventBox : MonoBehaviour
 {
-    [SerializeField] private List<CinemachineDollyCart> _carts;
     private CharacterManager _playerManager;
+    //railêÿÇËë÷Ç¶ÉCÉxÉìÉgÇ…Ç¬Ç¢Çƒ
+    [SerializeField] private List<CinemachineDollyCart> _carts;
     private bool _isInit = false;
+    int _actionSize;
+    private Action<EventManager.EventInfo> _callBackEvent;
 
     public void Initialize(CharacterManager playerManager)
     {
@@ -16,10 +19,14 @@ public class EventBox : MonoBehaviour
         _isInit = true;
     }
 
-    private void MoveNextRail()
+    public void SetpCallBackAction(Action<EventManager.EventInfo> callBackEvent)
     {
-        if (_isInit == false) return;
-        _playerManager.SetNextCart(_carts[1]);
+        _callBackEvent = callBackEvent;
+    }
+
+    private void MoveNextRail(int selectedCart)
+    {
+        _playerManager.SetNextCart(_carts[selectedCart]);
         //_carts[1].transform.SetParent(_playerTransform);
         _isInit = false;
     }
@@ -27,6 +34,11 @@ public class EventBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        MoveNextRail();
+        if (_isInit == false) return;
+        EventManager.EventInfo tmp = new EventManager.EventInfo();
+        tmp._selectionCount = _carts.Count;
+        tmp._callBackAction = MoveNextRail;
+
+        _callBackEvent(tmp);
     }
 }

@@ -12,6 +12,12 @@ public class CartReceiver : MonoBehaviour
     bool m_Initialized = false;
     int reverse = 1;
 
+    public bool IsSameCart(CinemachineDollyCart cartPosition)
+    {
+        if (cartPosition.gameObject == _cartPotision.gameObject) return true;
+        return false;
+    }
+
     public void Initialize(RadioController radioController)
     {
         m_redioController = radioController;
@@ -19,11 +25,7 @@ public class CartReceiver : MonoBehaviour
         m_Initialized = true;
     }
 
-    public void SetNextCart(CinemachineDollyCart cartPotision)
-    {
-        _cartPotision = cartPotision;
-    }
-
+    public void SetNextCart(CinemachineDollyCart cartPotision) => _cartPotision = cartPotision;
 
     // Update is called once per frame
     void Update()
@@ -40,7 +42,6 @@ public class CartReceiver : MonoBehaviour
                 reverse = -reverse;
             }
         }
-
 
         if (Keyboard.current.mKey.isPressed)
         {

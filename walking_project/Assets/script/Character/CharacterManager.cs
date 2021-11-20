@@ -15,6 +15,12 @@ public class CharacterManager : MonoBehaviour
         m_cartReceiver.Initialize(m_radioController);
     }
 
+    public bool IsMyaCart(CinemachineDollyCart dollyCart)
+    {
+        return m_cartReceiver.IsSameCart(dollyCart);
+    }
+
+
     public void SetNextCart(CinemachineDollyCart dollyCart)
     {
         m_cartReceiver.SetNextCart(dollyCart);

@@ -23,6 +23,7 @@ public class EventManager : MonoBehaviour
             e?.SetpCallBackAction(EventAction);
         });
         _uiManager.Initialize();
+        _uiManager.gameObject.SetActive(true);
     }
     
     public void EventAction(EventInfo eventIfno)

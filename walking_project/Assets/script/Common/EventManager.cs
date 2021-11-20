@@ -17,22 +17,13 @@ public class EventManager : MonoBehaviour
 
     public void Initialize(CharacterManager playerManage)
     {
+        _uiManager.Initialize();
         _eventBoxes.ForEach(e =>
         {
-            e?.Initialize(playerManage);
-            e?.SetpCallBackAction(EventAction);
+            e?.Initialize(playerManage, _uiManager);
         });
-        _uiManager.Initialize();
+
         _uiManager.gameObject.SetActive(true);
     }
-    
-    public void EventAction(EventInfo eventIfno)
-    {
-        //eventIfno‚ð‚à‚Æ‚ÉUI‚ð•\Ž¦‚·‚é
-        _uiManager.DisplaySelection(eventIfno);
-    }
-
-
-   
 
 }

@@ -8,6 +8,12 @@ public class UIController : MonoBehaviour
     private Action<int> _atction;
     private int _number;
 
+    public void ResetInfo()
+    {
+       
+    }
+
+
     public void SetButtonNumber(int num)
     {
         _number = num;

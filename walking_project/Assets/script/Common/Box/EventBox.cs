@@ -11,19 +11,16 @@ public class EventBox : MonoBehaviour
     private CharacterManager _playerManager;
     private List<CinemachineDollyCart> _ableCarts;
     private Action<EventManager.EventInfo> _callBackEvent;
+    private UIManager _uiManager;
     private bool _isBusy = true;
     int _actionSize;
     
 
-    public void Initialize(CharacterManager playerManager)
+    public void Initialize(CharacterManager playerManager, UIManager uiManager)
     {
         _playerManager = playerManager;
+        _uiManager = uiManager;
         _isBusy = false;
-    }
-
-    public void SetpCallBackAction(Action<EventManager.EventInfo> callBackEvent)
-    {
-        _callBackEvent = callBackEvent;
     }
 
     private void MoveNextRail(int selectedCart)
@@ -42,12 +39,13 @@ public class EventBox : MonoBehaviour
         tmp._selectionCount = _ableCarts.Count;
         tmp._callBackAction = MoveNextRail;
         _isBusy = true;
-        _callBackEvent(tmp);
+        _uiManager.DisplaySelection(tmp);
     }
 
     //Ç∑ÇËî≤ÇØÇΩèuä‘
     private void OnTriggerExit(Collider other)
     {
+        _uiManager.UnDisplaySelection();
         _isBusy = false;
     }
 

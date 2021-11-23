@@ -25,6 +25,7 @@ public class CharacterManager : MonoBehaviour
     {
         m_cartReceiver.SetNextCart(dollyCart);
         m_radioController.transform.SetParent(dollyCart.transform);
+        m_cartReceiver.SetNextLookat();
     }
 
 

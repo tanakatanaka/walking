@@ -301,5 +301,10 @@ namespace StarterAssets
         {
             MoveSpeed = speed;
         }
+
+        public void LookAt(Transform target)
+        {
+            transform.LookAt(target, Vector3.up);
+        }
     }
 }

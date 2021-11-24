@@ -7,44 +7,33 @@ using UnityEngine.InputSystem;
 
 public class CartReceiver : MonoBehaviour
 {
-    [SerializeField] private CinemachineDollyCart m_cartPotision;
-    [SerializeField] private GameObject m_lookAtPos;
+    [SerializeField] private RailController m_rail;
     private RadioController m_redioController;
     private bool m_Initialized = false;
     private int m_reverse = 1;
 
     public bool IsSameCart(CinemachineDollyCart cartPosition)
     {
-        if (cartPosition.gameObject == m_cartPotision.gameObject) return true;
+        if (cartPosition.gameObject == m_rail.Cart.gameObject) return true;
         return false;
     }
 
     public void Initialize(RadioController radioController)
     {
         m_redioController = radioController;
-        m_redioController.MoveSpeed = m_cartPotision.m_Speed;
-
-        if(m_lookAtPos == null)
-        {
-            m_lookAtPos = GameObject.Find("DollyLookAt");
-        }
+        m_redioController.MoveSpeed = m_rail.Cart.m_Speed;
 
         m_Initialized = true;
     }
 
-    public void SetNextCart(CinemachineDollyCart cartPotision) =>m_cartPotision = cartPotision;
-    public void SetNextLookat()
-    {
-        m_lookAtPos = null;
-        m_lookAtPos = GameObject.Find("DollyLookAt");
-    }
-
+    public void SetNextRail(RailController nextRail) => m_rail = nextRail;
+   
     // Update is called once per frame
     void Update()
     {
         if (m_Initialized == false) return;
 
-        //transform.position = m_cartPotision.transform.position;
+        //transform.position = m_cart.transform.position;
 
         if (Keyboard.current.nKey.isPressed)
         {
@@ -54,22 +43,22 @@ public class CartReceiver : MonoBehaviour
                 m_reverse = -m_reverse;
 
                 //íçéãì_Ç‡âÒì]ÇµÇƒÇ®Ç≠
-                Vector3 pos = m_lookAtPos.transform.localPosition;
+                Vector3 pos = m_rail.LookAtTransform.localPosition;
                 pos.z = -pos.z;
-                m_lookAtPos.transform.localPosition = pos;
+                m_rail.LookAtTransform.transform.localPosition = pos;
             }
         }
 
         if (Keyboard.current.mKey.isPressed)
         {
-            m_cartPotision.m_Speed = 3 * m_reverse;
+            m_rail.Cart.m_Speed = 3 * m_reverse;
         }
         else
         {
-            m_cartPotision.m_Speed = 0;
+            m_rail.Cart.m_Speed = 0;
         }
 
-        m_redioController.LookAt(m_lookAtPos.transform);
-        m_redioController.ChangeMoveAnimation(Mathf.Abs(m_cartPotision.m_Speed) );
+        m_redioController.LookAt(m_rail.LookAtTransform);
+        m_redioController.ChangeMoveAnimation(Mathf.Abs(m_rail.Cart.m_Speed) );
     }
 }

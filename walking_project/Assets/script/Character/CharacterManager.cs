@@ -21,11 +21,10 @@ public class CharacterManager : MonoBehaviour
     }
 
 
-    public void SetNextCart(CinemachineDollyCart dollyCart)
+    public void SetNextRail(RailController rail)
     {
-        m_cartReceiver.SetNextCart(dollyCart);
-        m_radioController.transform.SetParent(dollyCart.transform);
-        m_cartReceiver.SetNextLookat();
+        m_cartReceiver.SetNextRail(rail);
+        m_radioController.transform.SetParent(rail.Cart.transform);
     }
 
 

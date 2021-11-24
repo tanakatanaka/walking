@@ -6,10 +6,10 @@ using Cinemachine;
 
 public class EventBox : MonoBehaviour
 {
-    [SerializeField] private List<CinemachineDollyCart> _originCarts;
+    [SerializeField] private List<RailController> _originCarts;
 
     private CharacterManager _playerManager;
-    private List<CinemachineDollyCart> _ableCarts;
+    private List<RailController> _ableCarts;
     private Action<EventManager.EventInfo> _callBackEvent;
     private UIManager _uiManager;
     private bool _isBusy = true;
@@ -25,7 +25,7 @@ public class EventBox : MonoBehaviour
 
     private void MoveNextRail(int selectedCart)
     {
-        _playerManager.SetNextCart(_ableCarts[selectedCart]);
+        _playerManager.SetNextRail(_ableCarts[selectedCart]);
         //_carts[1].transform.SetParent(_playerTransform);
         _isBusy = false;
     }
@@ -34,7 +34,7 @@ public class EventBox : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (_isBusy == true) return;
-        _ableCarts = _originCarts.FindAll(c => !_playerManager.IsMyaCart(c));
+        _ableCarts = _originCarts.FindAll(c => !_playerManager.IsMyaCart(c.Cart));
         EventManager.EventInfo tmp = new EventManager.EventInfo();
         tmp._selectionCount = _ableCarts.Count;
         tmp._callBackAction = MoveNextRail;

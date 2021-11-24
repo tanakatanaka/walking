@@ -12,6 +12,8 @@ public class CartReceiver : MonoBehaviour
     private bool m_Initialized = false;
     private int m_reverse = 1;
 
+    public RailController MyRail => m_rail;
+
     public bool IsSameCart(CinemachineDollyCart cartPosition)
     {
         if (cartPosition.gameObject == m_rail.Cart.gameObject) return true;
@@ -28,6 +30,17 @@ public class CartReceiver : MonoBehaviour
 
     public void SetNextRail(RailController nextRail) => m_rail = nextRail;
    
+    public void TurnLookAt()
+    {
+      
+        //íçéãì_Ç‡âÒì]ÇµÇƒÇ®Ç≠
+        Vector3 pos = m_rail.LookAtTransform.localPosition;
+        pos.z = -pos.z;
+        m_rail.LookAtTransform.transform.localPosition = pos;
+        m_redioController.LookAt(m_rail.LookAtTransform);
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -41,11 +54,7 @@ public class CartReceiver : MonoBehaviour
             {
                 m_redioController.Rotate();
                 m_reverse = -m_reverse;
-
-                //íçéãì_Ç‡âÒì]ÇµÇƒÇ®Ç≠
-                Vector3 pos = m_rail.LookAtTransform.localPosition;
-                pos.z = -pos.z;
-                m_rail.LookAtTransform.transform.localPosition = pos;
+                TurnLookAt();
             }
         }
 

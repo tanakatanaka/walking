@@ -32,7 +32,6 @@ public class CartReceiver : MonoBehaviour
    
     public void TurnLookAt()
     {
-      
         //íçéãì_Ç‡âÒì]ÇµÇƒÇ®Ç≠
         Vector3 pos = m_rail.LookAtTransform.localPosition;
         pos.z = -pos.z;
@@ -40,6 +39,28 @@ public class CartReceiver : MonoBehaviour
         m_redioController.LookAt(m_rail.LookAtTransform);
     }
 
+    public void TurnPlayer()
+    {
+        Vector3 pos = m_rail.LookAtTransform.localPosition;
+
+        if (pos.z < 0 && m_reverse > 0)
+        {
+            m_reverse = -m_reverse;
+        }
+        else if(pos.z > 0 && m_reverse < 0)
+        {
+            m_reverse = -m_reverse;
+        }
+        else if (pos.z < 0 && m_reverse < 0 && !m_rail.IsRailEnd())
+        {
+            m_redioController.Rotate();
+            m_reverse = -m_reverse;
+            TurnLookAt();
+        }
+
+
+
+    }
 
     // Update is called once per frame
     void Update()

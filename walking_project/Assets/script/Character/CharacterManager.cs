@@ -23,12 +23,14 @@ public class CharacterManager : MonoBehaviour
 
     public void SetNextRail(RailController rail)
     {
-        if (m_cartReceiver.MyRail.IsRailEnd())
-        {
-            m_cartReceiver.TurnLookAt();
-        }
+        //レール変更前
+        if (m_cartReceiver.MyRail.IsRailEnd()) m_cartReceiver.TurnLookAt();
+        else if (m_cartReceiver.MyRail.IsRailStart()) m_cartReceiver.TurnLookAt();
+
+        //レール変更後
         m_cartReceiver.SetNextRail(rail);
         m_radioController.transform.SetParent(rail.Cart.transform);
+        m_cartReceiver.TurnPlayer();
     }
 
 

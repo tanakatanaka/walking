@@ -18,5 +18,12 @@ public class RailController : MonoBehaviour
         return false;
     }
 
+    public bool IsRailStart()
+    {
+        if (0 <= m_cart.m_Position + 1f) return true;
+
+        return false;
+    }
+
 
 }

@@ -26,7 +26,6 @@ public class EventBox : MonoBehaviour
     private void MoveNextRail(int selectedCart)
     {
         _playerManager.SetNextRail(_ableCarts[selectedCart]);
-        //_carts[1].transform.SetParent(_playerTransform);
         _isBusy = false;
     }
 

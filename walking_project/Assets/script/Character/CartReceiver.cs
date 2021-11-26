@@ -43,11 +43,7 @@ public class CartReceiver : MonoBehaviour
     {
         Vector3 pos = m_rail.LookAtTransform.localPosition;
 
-        if (pos.z < 0 && m_reverse > 0)
-        {
-            m_reverse = -m_reverse;
-        }
-        else if(pos.z > 0 && m_reverse < 0)
+        if ((pos.z < 0 && m_reverse > 0) || (pos.z > 0 && m_reverse < 0))
         {
             m_reverse = -m_reverse;
         }

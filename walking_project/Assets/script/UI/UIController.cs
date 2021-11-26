@@ -29,6 +29,11 @@ public class UIController : MonoBehaviour
         _atction(_number);
     }
 
+    public void OnClickMove()
+    {
+        _atction(_number);
+    }
+
 
 
 

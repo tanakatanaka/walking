@@ -37,6 +37,8 @@ public class EventBox : MonoBehaviour
     //Ç∑ÇËî≤ÇØÇΩèuä‘
     private void OnTriggerExit(Collider other)
     {
+        if (m_compositeFunc == null) return;
+
         _uiManager.UnDisplaySelection();
         _isBusy = false;
     }

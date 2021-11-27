@@ -20,7 +20,6 @@ public class CharacterManager : MonoBehaviour
         return m_cartReceiver.IsSameCart(dollyCart);
     }
 
-
     public void SetNextRail(RailController rail)
     {
         //ƒŒ[ƒ‹•ÏX‘O
@@ -30,6 +29,11 @@ public class CharacterManager : MonoBehaviour
         m_cartReceiver.SetNextRail(rail);
         m_radioController.transform.SetParent(rail.Cart.transform);
         m_cartReceiver.TurnPlayer();
+    }
+
+    public void SitTheSheet()
+    {
+        m_cartReceiver.SitMode();
     }
 
 

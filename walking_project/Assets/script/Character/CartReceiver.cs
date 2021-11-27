@@ -53,10 +53,14 @@ public class CartReceiver : MonoBehaviour
             m_reverse = -m_reverse;
             TurnLookAt();
         }
-
-
-
     }
+
+    public void SitMode()
+    {
+        m_redioController.Sit();
+    }
+
+
 
     // Update is called once per frame
     void Update()

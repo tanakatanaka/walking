@@ -71,6 +71,7 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        private bool _sit = false;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -82,6 +83,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDMotionSit;
 
         private Animator _animator;
         private CharacterController _controller;
@@ -148,6 +150,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDMotionSit = Animator.StringToHash("Sit");
         }
 
         private void GroundedCheck()
@@ -306,5 +309,12 @@ namespace StarterAssets
         {
             transform.LookAt(target, Vector3.up);
         }
+
+        public void Sit()
+        {
+            _sit = !_sit;
+            _animator.SetBool(_animIDMotionSit, _sit);
+        }
+
     }
 }

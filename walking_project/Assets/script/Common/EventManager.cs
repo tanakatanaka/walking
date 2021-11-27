@@ -6,6 +6,7 @@ using System;
 public class EventManager : MonoBehaviour
 {
     [SerializeField] private List<RailPointBox> m_railPointBoxes = default;
+    [SerializeField] private List<SofaBox> _sofaBoxes = default;
     [SerializeField] UIManager _uiManager = default;
 
     public class EventInfo
@@ -18,6 +19,11 @@ public class EventManager : MonoBehaviour
     {
         _uiManager.Initialize();
         m_railPointBoxes.ForEach(e =>
+        {
+            e?.Initialize(playerManage, _uiManager);
+        });
+
+        _sofaBoxes.ForEach(e =>
         {
             e?.Initialize(playerManage, _uiManager);
         });

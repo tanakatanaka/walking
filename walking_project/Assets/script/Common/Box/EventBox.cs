@@ -12,8 +12,8 @@ public class EventBox : MonoBehaviour
     private bool _isBusy = true;
     private int _actionSize;
     private Func<EventManager.EventInfo> m_compositeFunc;
-    public bool IsBusy => _isBusy;
 
+    public bool IsBusy => _isBusy;
     public CharacterManager PlayerManager => m_playerManager;
 
     public void Initialize(CharacterManager playerManager, UIManager uiManager)

@@ -6,39 +6,32 @@ using Cinemachine;
 
 public class EventBox : MonoBehaviour
 {
-    [SerializeField] private List<RailController> _originCarts;
-
-    private CharacterManager _playerManager;
-    private List<RailController> _ableCarts;
+    private CharacterManager m_playerManager;
     private Action<EventManager.EventInfo> _callBackEvent;
     private UIManager _uiManager;
     private bool _isBusy = true;
-    int _actionSize;
-    
+    private int _actionSize;
+    private Func<EventManager.EventInfo> m_compositeFunc;
+    public bool IsBusy => _isBusy;
+
+    public CharacterManager PlayerManager => m_playerManager;
 
     public void Initialize(CharacterManager playerManager, UIManager uiManager)
     {
-        _playerManager = playerManager;
+        m_playerManager = playerManager;
         _uiManager = uiManager;
         _isBusy = false;
     }
 
-    private void MoveNextRail(int selectedCart)
-    {
-        _playerManager.SetNextRail(_ableCarts[selectedCart]);
-        _isBusy = false;
-    }
+    public void SetCompositAction(Func<EventManager.EventInfo> compositeFunc) => m_compositeFunc = compositeFunc;
 
     //Ç∑ÇËî≤ÇØÇƒÇ¢ÇÈèÍçáåƒÇ—èoÇ∑
     private void OnTriggerStay(Collider other)
     {
         if (_isBusy == true) return;
-        _ableCarts = _originCarts.FindAll(c => !_playerManager.IsMyaCart(c.Cart));
-        EventManager.EventInfo tmp = new EventManager.EventInfo();
-        tmp._selectionCount = _ableCarts.Count;
-        tmp._callBackAction = MoveNextRail;
+        var eventInfo = m_compositeFunc();
         _isBusy = true;
-        _uiManager.DisplaySelection(tmp);
+        _uiManager.DisplaySelection(eventInfo);
     }
 
     //Ç∑ÇËî≤ÇØÇΩèuä‘

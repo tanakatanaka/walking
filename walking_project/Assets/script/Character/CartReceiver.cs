@@ -7,57 +7,57 @@ using UnityEngine.InputSystem;
 
 public class CartReceiver : MonoBehaviour
 {
-    [SerializeField] private RailController m_rail;
-    private RadioController m_redioController;
-    private bool m_Initialized = false;
-    private int m_reverse = 1;
+    [SerializeField] private RailController _rail;
+    private RadioController _redioController;
+    private bool _Initialized = false;
+    private int _reverse = 1;
 
-    public RailController MyRail => m_rail;
+    public RailController MyRail => _rail;
 
     public bool IsSameCart(CinemachineDollyCart cartPosition)
     {
-        if (cartPosition.gameObject == m_rail.Cart.gameObject) return true;
+        if (cartPosition.gameObject == _rail.Cart.gameObject) return true;
         return false;
     }
 
     public void Initialize(RadioController radioController)
     {
-        m_redioController = radioController;
-        m_redioController.MoveSpeed = m_rail.Cart.m_Speed;
+        _redioController = radioController;
+        _redioController.MoveSpeed = _rail.Cart.m_Speed;
 
-        m_Initialized = true;
+        _Initialized = true;
     }
 
-    public void SetNextRail(RailController nextRail) => m_rail = nextRail;
+    public void SetNextRail(RailController nextRail) => _rail = nextRail;
    
     public void TurnLookAt()
     {
         //íçéãì_Ç‡âÒì]ÇµÇƒÇ®Ç≠
-        Vector3 pos = m_rail.LookAtTransform.localPosition;
+        Vector3 pos = _rail.LookAtTransform.localPosition;
         pos.z = -pos.z;
-        m_rail.LookAtTransform.transform.localPosition = pos;
-        m_redioController.LookAt(m_rail.LookAtTransform);
+        _rail.LookAtTransform.transform.localPosition = pos;
+        _redioController.LookAt(_rail.LookAtTransform);
     }
 
     public void TurnPlayer()
     {
-        Vector3 pos = m_rail.LookAtTransform.localPosition;
+        Vector3 pos = _rail.LookAtTransform.localPosition;
 
-        if ((pos.z < 0 && m_reverse > 0) || (pos.z > 0 && m_reverse < 0))
+        if ((pos.z < 0 && _reverse > 0) || (pos.z > 0 && _reverse < 0))
         {
-            m_reverse = -m_reverse;
+            _reverse = -_reverse;
         }
-        else if (pos.z < 0 && m_reverse < 0 && !m_rail.IsRailEnd())
+        else if (pos.z < 0 && _reverse < 0 && !_rail.IsRailEnd())
         {
-            m_redioController.Rotate();
-            m_reverse = -m_reverse;
+            _redioController.Rotate();
+            _reverse = -_reverse;
             TurnLookAt();
         }
     }
 
     public void SitMode()
     {
-        m_redioController.Sit();
+        _redioController.Sit();
     }
 
 
@@ -65,30 +65,30 @@ public class CartReceiver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_Initialized == false) return;
+        if (_Initialized == false) return;
 
         //transform.position = m_cart.transform.position;
 
         if (Keyboard.current.nKey.isPressed)
         {
-            if (m_redioController._isRotation == false)
+            if (_redioController._isRotation == false)
             {
-                m_redioController.Rotate();
-                m_reverse = -m_reverse;
+                _redioController.Rotate();
+                _reverse = -_reverse;
                 TurnLookAt();
             }
         }
 
         if (Keyboard.current.mKey.isPressed)
         {
-            m_rail.Cart.m_Speed = 3 * m_reverse;
+            _rail.Cart.m_Speed = 3 * _reverse;
         }
         else
         {
-            m_rail.Cart.m_Speed = 0;
+            _rail.Cart.m_Speed = 0;
         }
 
-        m_redioController.LookAt(m_rail.LookAtTransform);
-        m_redioController.ChangeMoveAnimation(Mathf.Abs(m_rail.Cart.m_Speed) );
+        _redioController.LookAt(_rail.LookAtTransform);
+        _redioController.ChangeMoveAnimation(Mathf.Abs(_rail.Cart.m_Speed) );
     }
 }

@@ -6,18 +6,18 @@ using Cinemachine;
 
 public class SofaBox : MonoBehaviour
 {
-    [SerializeField] private EventBox m_eventBox = default;
-    [SerializeField] private GameObject m_targetObj = default;
+    [SerializeField] private EventBox _eventBox = default;
+    [SerializeField] private GameObject _targetObj = default;
 
     public void Initialize(CharacterManager playerManager, UIManager uiManager)
     {
-        m_eventBox.Initialize(playerManager, uiManager);
-        m_eventBox.SetCompositAction(CompositeAction);
+        _eventBox.Initialize(playerManager, uiManager);
+        _eventBox.SetCompositAction(CompositeAction);
     }
 
     public void SitTheChair(int selected)
     {
-        m_eventBox.PlayerManager.SitTheSheet();
+        _eventBox.PlayerManager.SitTheSheet();
     }
 
     public EventManager.EventInfo CompositeAction()

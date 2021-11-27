@@ -6,24 +6,24 @@ using Cinemachine;
 
 public class RailPointBox : MonoBehaviour
 {
-    [SerializeField] private EventBox m_eventBox = default;
-    [SerializeField] private RailManager m_railManager;
+    [SerializeField] private EventBox _eventBox = default;
+    [SerializeField] private RailManager _railManager;
 
     public void Initialize(CharacterManager playerManager, UIManager uiManager)
     {
-        m_eventBox.Initialize(playerManager, uiManager);
-        m_eventBox.SetCompositAction(CompositeAction);
+        _eventBox.Initialize(playerManager, uiManager);
+        _eventBox.SetCompositAction(CompositeAction);
     }
     
     public void MoveNextRail(int selectedCart)
     {
-        var moveAbleRails = m_railManager.GetMoveAbleRails(m_eventBox.PlayerManager);
-        m_eventBox.PlayerManager.SetNextRail(moveAbleRails[selectedCart]);
+        var moveAbleRails = _railManager.GetMoveAbleRails(_eventBox.PlayerManager);
+        _eventBox.PlayerManager.SetNextRail(moveAbleRails[selectedCart]);
     }
     
     public EventManager.EventInfo CompositeAction()
     {
-        var moveAbleRails = m_railManager.GetMoveAbleRails(m_eventBox.PlayerManager);
+        var moveAbleRails = _railManager.GetMoveAbleRails(_eventBox.PlayerManager);
         EventManager.EventInfo eventInfo = new EventManager.EventInfo();
         eventInfo._selectionCount = moveAbleRails.Count;
         eventInfo._callBackAction = MoveNextRail;

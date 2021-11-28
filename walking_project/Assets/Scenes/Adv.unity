@@ -991,6 +991,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1045928788}
     m_Modifications:
+    - target: {fileID: 340384863, guid: a1e0dcfa522194a458be9edfc302b4a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5554056941313330308, guid: a1e0dcfa522194a458be9edfc302b4a1, type: 3}
       propertyPath: _rail
       value: 
@@ -1909,9 +1913,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 794004133456294802, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1159888454459348486, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
       propertyPath: m_Name
       value: UI_Canvas_Walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522987882119396521, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3395425642181002468, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
       propertyPath: joystickOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target

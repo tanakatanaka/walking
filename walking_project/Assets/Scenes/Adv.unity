@@ -1913,38 +1913,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 794004133456294802, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1159888454459348486, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
       propertyPath: m_Name
       value: UI_Canvas_Walking
-      objectReference: {fileID: 0}
-    - target: {fileID: 1522987882119396521, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3395425642181002468, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
       propertyPath: joystickOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5596004384518426348, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-    - target: {fileID: 4515695656141988122, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -339
-      objectReference: {fileID: 0}
-    - target: {fileID: 4515695656141988122, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765628034004112721, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClickAction
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775140807619714179, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -265
-      objectReference: {fileID: 0}
     - target: {fileID: 5035887065514226184, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2028,10 +2004,6 @@ PrefabInstance:
     - target: {fileID: 5035887065514226184, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199115745424508807, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c352e3dba961d4dbba26028ac03496, type: 3}

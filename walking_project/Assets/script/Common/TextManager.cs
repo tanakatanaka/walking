@@ -5,44 +5,40 @@ using System;
 
 public class TextManager : MonoBehaviour
 {
-    public string[] textMessage; //テキストの加工前の一行を入れる変数
-    public string[,] textWords; 
+    public class textTemplete
+    {
+        public int _num;
+        public string _hash;
+        public string _text;
+    };
 
-    private int rowLength; //テキスト内の行数を取得する変数
-    private int columnLength; //テキスト内の列数を取得する変数
+    private List<textTemplete> _textTempletesList;
 
     public void Start()
     {
+        _textTempletesList = new List<textTemplete>();
         LoadText("");
     }
-
 
     public void LoadText(string textName)
     {
         TextAsset textasset = new TextAsset(); 
         textasset = Resources.Load("test", typeof(TextAsset)) as TextAsset; 
-        string TextLines = textasset.text; 
+        var textMessage = textasset.text.Split('\n'); 
+        var columnLength = textMessage[0].Split(new[] { "   " }, StringSplitOptions.None).Length;
+        var rowLength = textMessage.Length;
 
-        //Splitで一行づつを代入した1次配列を作成
-        textMessage = TextLines.Split('\n'); //
-
-        //行数と列数を取得
-        columnLength = textMessage[0].Split('\t').Length;
-        rowLength = textMessage.Length;
-
-        //2次配列を定義
-        textWords = new string[rowLength, columnLength];
-
+        var textWords = new string[rowLength, columnLength];
         for (int i = 0; i < rowLength; i++)
         {
+            var tempWords = textMessage[i].Split(new[] { "   " }, StringSplitOptions.None);
+            if (i == 0) continue; 
 
-            string[] tempWords = textMessage[i].Split('\t'); //textMessageをカンマごとに分けたものを一時的にtempWordsに代入
-
-            for (int n = 0; n < columnLength; n++)
-            {
-                textWords[i, n] = tempWords[n]; 
-            }
+            textTemplete templete = new textTemplete();
+            templete._num = Int32.Parse(tempWords[0]);
+            templete._hash = tempWords[1];
+            templete._text = tempWords[2];
+            _textTempletesList.Add(templete);
         }
     }
-
 }

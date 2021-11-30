@@ -5,6 +5,8 @@ using System;
 
 public class TextManager : MonoBehaviour
 {
+    public static TextManager Instance;
+
     public class textTemplete
     {
         public int _num;
@@ -16,11 +18,21 @@ public class TextManager : MonoBehaviour
 
     public void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         _textTempletesList = new List<textTemplete>();
         LoadText("");
     }
 
-    public void LoadText(string textName)
+    private void LoadText(string textName)
     {
         TextAsset textasset = new TextAsset(); 
         textasset = Resources.Load("test", typeof(TextAsset)) as TextAsset; 
@@ -41,4 +53,10 @@ public class TextManager : MonoBehaviour
             _textTempletesList.Add(templete);
         }
     }
+
+    public void Test()
+    {
+        int a = 0;
+    }
+
 }

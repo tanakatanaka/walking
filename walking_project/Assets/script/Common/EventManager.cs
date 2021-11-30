@@ -17,6 +17,7 @@ public class EventManager : MonoBehaviour
 
     public void Initialize(CharacterManager playerManage)
     {
+        TextManager.Instance.Test();
         _uiManager.Initialize();
         _railPointBoxes.ForEach(e =>
         {

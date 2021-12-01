@@ -5,8 +5,6 @@ using System;
 
 public class TextManager : MonoBehaviour
 {
-    public static TextManager Instance;
-
     public class textTemplete
     {
         public int _num;
@@ -16,18 +14,8 @@ public class TextManager : MonoBehaviour
 
     private List<textTemplete> _textTempletesList;
 
-    public void Start()
+    public void Initialize()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         _textTempletesList = new List<textTemplete>();
         LoadText("");
     }

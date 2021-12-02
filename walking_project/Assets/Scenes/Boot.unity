@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1397331990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 741936858558948752, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+  m_PrefabInstance: {fileID: 1360061713047807780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8950412e1ed09643914309df1b7cdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1360061713047807780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: game_manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3999734708119979807, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: _musicPlayer
+      value: 
+      objectReference: {fileID: 1397331990}
     - target: {fileID: 3999734708119979807, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: _sceneController
       value: 

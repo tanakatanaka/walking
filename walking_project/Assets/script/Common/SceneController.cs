@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-    List<string> PrevSceneList;
+    private List<string> PrevSceneList;
 
     public void Initialize()
     {

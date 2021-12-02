@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    static public GameManager _instance { get { return Instance; } }
-    static protected GameManager Instance;
+    static public GameManager Instance { get { return _instance; } }
+    static protected GameManager _instance;
 
     [SerializeField] private TextManager   _textManager;
     [SerializeField] private SceneController _sceneController;
+    [SerializeField] private MusicPlayer _musicPlayer;
+
+    public TextManager I_TextManager => _textManager;
+    public SceneController I_SceneController => _sceneController;
+    public MusicPlayer I_MusicPlayer => _musicPlayer;
 
 
     // Start is called before the first frame update
@@ -16,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -26,15 +31,16 @@ public class GameManager : MonoBehaviour
 
         _textManager.Initialize();
         _sceneController.Initialize();
+        _musicPlayer.Initialize();
 
         _sceneController.JumpNextScene("DebugMenu");
     }
 
     public void OnDestroy()
     {
-        if (Instance == this)
+        if (_instance == this)
         {
-            Instance = null;
+            _instance = null;
         }
     }
 }

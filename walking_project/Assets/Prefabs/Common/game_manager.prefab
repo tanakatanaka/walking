@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textManager: {fileID: 5539489318147811759}
   _sceneController: {fileID: 197632182570449658}
+  _musicPlayer: {fileID: 741936858558948752}
 --- !u!1001 &464623168338420231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,3 +257,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7113550576517188468, guid: 02ea0ac41457320418f495e89d77a97f, type: 3}
   m_PrefabInstance: {fileID: 7867124750228890769}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &741936858558948752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7450721674237788417, guid: 02ea0ac41457320418f495e89d77a97f, type: 3}
+  m_PrefabInstance: {fileID: 7867124750228890769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8950412e1ed09643914309df1b7cdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

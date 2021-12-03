@@ -867,6 +867,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Speech_Bubble
       objectReference: {fileID: 0}
+    - target: {fileID: 6714125155692127222, guid: 0382196778a6f574a9a8fe5a9146d805, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0382196778a6f574a9a8fe5a9146d805, type: 3}
 --- !u!224 &8793117819253393302 stripped

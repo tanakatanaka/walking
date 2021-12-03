@@ -18,4 +18,9 @@ public class SceneController : MonoBehaviour
         PrevSceneList.Add(sceneName);
         SceneManager.LoadScene(sceneName);
     }
+
+    public bool IsCurrentScene(string sceneName)
+    {
+        return sceneName == SceneManager.GetActiveScene().name;
+    }
 }

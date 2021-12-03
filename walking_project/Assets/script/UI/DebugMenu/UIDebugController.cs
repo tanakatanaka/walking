@@ -7,8 +7,13 @@ public class UIDebugController : MonoBehaviour
 {
     [SerializeField] private string SceneName = default;
 
-    public void OnClickAction()
+    void Start()
     {
-        GameManager.Instance.I_SceneController.JumpNextScene(SceneName);
+        int a = 0;
+    }
+
+    public void OnClickJumpAction()
+    {
+        GameManager.Instance.I_SceneController.JumpNextScene("Adv");
     }
 }

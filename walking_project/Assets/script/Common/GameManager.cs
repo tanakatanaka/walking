@@ -33,7 +33,10 @@ public class GameManager : MonoBehaviour
         _sceneController.Initialize();
         _musicPlayer.Initialize();
 
-        _sceneController.JumpNextScene("DebugMenu");
+        if (_sceneController.IsCurrentScene("Boot"))
+        {
+            _sceneController.JumpNextScene("Adv");
+        }
     }
 
     public void OnDestroy()

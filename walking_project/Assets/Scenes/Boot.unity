@@ -123,15 +123,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &1397331990 stripped
+--- !u!1 &308538137
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308538139}
+  - component: {fileID: 308538138}
+  m_Layer: 0
+  m_Name: _FungusState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &308538138
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741936858558948752, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308538137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedFlowchart: {fileID: 1892512136}
+--- !u!4 &308538139
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308538137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1892512136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
   m_PrefabInstance: {fileID: 1360061713047807780}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8950412e1ed09643914309df1b7cdd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1360061713047807780
@@ -145,14 +189,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: game_manager
       objectReference: {fileID: 0}
-    - target: {fileID: 3999734708119979807, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
-      propertyPath: _musicPlayer
-      value: 
-      objectReference: {fileID: 1397331990}
-    - target: {fileID: 3999734708119979807, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
-      propertyPath: _sceneController
-      value: 
-      objectReference: {fileID: 1360061713047807781}
     - target: {fileID: 5259090121116289887, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -199,14 +235,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
---- !u!114 &1360061713047807781 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 197632182570449658, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
-  m_PrefabInstance: {fileID: 1360061713047807780}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e06f9a4f86a85b4f99c7ae4ef267813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

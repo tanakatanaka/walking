@@ -139,4 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventBox: {fileID: 843364205764893113}
+  _buttonNameHashList:
+  - common_talk
   _message: test

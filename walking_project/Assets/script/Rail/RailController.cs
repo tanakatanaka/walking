@@ -5,11 +5,13 @@ using Cinemachine;
 
 public class RailController : MonoBehaviour
 {
-    [SerializeField] private Transform m_lookAtTransform;
+    [SerializeField] private string _railNameHash;
     [SerializeField] private CinemachineDollyCart m_cart;
 
+    private Transform _lookAtTransform;
     public CinemachineDollyCart Cart => m_cart;
-    public Transform LookAtTransform => m_lookAtTransform;
+    public Transform LookAtTransform => _lookAtTransform;
+    public string RailNameHash => _railNameHash;
 
     public bool IsRailEnd()
     {

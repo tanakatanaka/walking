@@ -5,18 +5,18 @@ using System;
 
 public class TextManager : MonoBehaviour
 {
-    public class textTemplete
+    public class TextTemplete
     {
         public int _num;
         public string _hash;
         public string _text;
     };
 
-    private List<textTemplete> _textTempletesList;
+    private List<TextTemplete> _textTempletesList;
 
     public void Initialize()
     {
-        _textTempletesList = new List<textTemplete>();
+        _textTempletesList = new List<TextTemplete>();
         LoadText("");
     }
 
@@ -34,7 +34,7 @@ public class TextManager : MonoBehaviour
             var tempWords = textMessage[i].Split(new[] { "   " }, StringSplitOptions.None);
             if (i == 0) continue; 
 
-            textTemplete templete = new textTemplete();
+            TextTemplete templete = new TextTemplete();
             templete._num = Int32.Parse(tempWords[0]);
             templete._hash = tempWords[1];
             templete._text = tempWords[2];

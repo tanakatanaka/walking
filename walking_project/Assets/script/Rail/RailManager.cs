@@ -14,4 +14,11 @@ public class RailManager : MonoBehaviour
     {
         return _rails.FindAll(c => !playerManager.IsMyaCart(c.Cart));
     }
+
+    public List<string> GetRailsHashNameList()
+    {
+        List<string> railNameHash = new List<string>();
+          _rails.ForEach(c => railNameHash.Add(c.RailNameHash));
+        return railNameHash;
+    }
 }

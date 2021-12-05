@@ -7,6 +7,7 @@ using Cinemachine;
 public class SofaBox : MonoBehaviour
 {
     [SerializeField] private EventBox _eventBox = default;
+    [SerializeField] private List<string> _buttonNameHashList = default;
     [SerializeField] private GameObject _targetObj = default;
 
     public void Initialize(CharacterManager playerManager, UIManager uiManager)
@@ -25,7 +26,7 @@ public class SofaBox : MonoBehaviour
         EventManager.EventInfo eventInfo = new EventManager.EventInfo();
         eventInfo._selectionCount = 1;
         eventInfo._callBackAction = SitTheChair;
-
+        eventInfo._textHashList = _buttonNameHashList;
         return eventInfo;
     }
 

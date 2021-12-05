@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class UIController : MonoBehaviour
 {
+    [SerializeField] private Text _text;
     private Action<int> _atction;
     private int _number;
-
+    
     public void ResetInfo()
     {
        
     }
 
+    public void SetButtonText(string textHash)
+    {
+        _text.text = GameManager.Instance.I_TextManager;
+    }
 
     public void SetButtonNumber(int num)
     {

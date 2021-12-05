@@ -14,6 +14,7 @@ public class EventManager : MonoBehaviour
     {
         public int _selectionCount = 0;
         public Action<int> _callBackAction = null;
+        public List<string> _textHashList = new List<string>();
     };
 
     public void Initialize(CharacterManager playerManage)

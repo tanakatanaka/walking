@@ -8,7 +8,8 @@ using Fungus;
 public class TalkBox : MonoBehaviour
 {
     [SerializeField] private EventBox _eventBox = default;
-    [SerializeField] private string _message = "";
+    [SerializeField] private List<string> _buttonNameHashList = default;
+    [SerializeField] private string _message = default;
     private bool _isTalking = false;
     private Flowchart _flowChart;
 
@@ -29,7 +30,7 @@ public class TalkBox : MonoBehaviour
         EventManager.EventInfo eventInfo = new EventManager.EventInfo();
         eventInfo._selectionCount = 1;
         eventInfo._callBackAction = TalkEvent;
-
+        eventInfo._textHashList = _buttonNameHashList;
         return eventInfo;
     }
 

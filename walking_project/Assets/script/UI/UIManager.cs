@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
             if (b.gameObject.activeSelf)
             {
                 b?.SetButtonNumber(i);
+                b?.SetButtonText(eventInfo._textHashList[i]);
                 b?.SetButtonAction(eventInfo._callBackAction);
                 i++;
                 if (i >= eventInfo._selectionCount) return;

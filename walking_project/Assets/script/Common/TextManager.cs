@@ -44,8 +44,7 @@ public class TextManager : MonoBehaviour
 
     public string GetText(string hash)
     {
-        var x = _textTempletesList.Find(c => c._hash == hash)?._text;
-        return x;
+        return _textTempletesList.Find(c => c._hash == hash)?._text;
     }
 
 }

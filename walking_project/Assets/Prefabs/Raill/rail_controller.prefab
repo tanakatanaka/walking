@@ -125,8 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lookAtTransform: {fileID: 250590594591748384}
+  _railNameHash: 
   m_cart: {fileID: 634206237437802809}
+  _lookAtTransform: {fileID: 250590594591748384}
 --- !u!1 &634206237437802808
 GameObject:
   m_ObjectHideFlags: 0

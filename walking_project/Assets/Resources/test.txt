@@ -1,6 +1,6 @@
 #ID	Hash	Message
 1	common_talk	TALK
 2	common_sit		SIT
-3	rail_home	to Home
-4	rail_toilet		to Toilet
-5	rail_room		to Room 
+3	rail_home	Home
+4	rail_toilet	Toile
+5	rail_room	Room 

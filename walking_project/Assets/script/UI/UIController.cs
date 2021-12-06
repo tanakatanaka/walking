@@ -17,7 +17,7 @@ public class UIController : MonoBehaviour
 
     public void SetButtonText(string textHash)
     {
-        _text.text = GameManager.Instance.I_TextManager;
+        _text.text = GameManager.Instance.I_TextManager.GetText(textHash);
     }
 
     public void SetButtonNumber(int num)

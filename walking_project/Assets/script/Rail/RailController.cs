@@ -8,7 +8,7 @@ public class RailController : MonoBehaviour
     [SerializeField] private string _railNameHash;
     [SerializeField] private CinemachineDollyCart m_cart;
 
-    private Transform _lookAtTransform;
+    [SerializeField] private Transform _lookAtTransform;
     public CinemachineDollyCart Cart => m_cart;
     public Transform LookAtTransform => _lookAtTransform;
     public string RailNameHash => _railNameHash;

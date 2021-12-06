@@ -25,13 +25,13 @@ public class TextManager : MonoBehaviour
         TextAsset textasset = new TextAsset(); 
         textasset = Resources.Load("test", typeof(TextAsset)) as TextAsset; 
         var textMessage = textasset.text.Split('\n'); 
-        var columnLength = textMessage[0].Split(new[] { "   " }, StringSplitOptions.None).Length;
+        var columnLength = textMessage[0].Split(new[] { "\t" }, StringSplitOptions.None).Length;
         var rowLength = textMessage.Length;
 
         var textWords = new string[rowLength, columnLength];
         for (int i = 0; i < rowLength; i++)
         {
-            var tempWords = textMessage[i].Split(new[] { "   " }, StringSplitOptions.None);
+            var tempWords = textMessage[i].Split(new[] { "\t" }, StringSplitOptions.None);
             if (i == 0) continue; 
 
             TextTemplete templete = new TextTemplete();
@@ -42,9 +42,10 @@ public class TextManager : MonoBehaviour
         }
     }
 
-    public void Test()
+    public string GetText(string hash)
     {
-        int a = 0;
+        var x = _textTempletesList.Find(c => c._hash == hash)?._text;
+        return x;
     }
 
 }

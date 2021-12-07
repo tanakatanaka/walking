@@ -11,6 +11,8 @@ public class CartReceiver : MonoBehaviour
     private RadioController _redioController;
     private bool _Initialized = false;
     private int _reverse = 1;
+    private bool _isGo = false;
+    private bool _isTurn = false;
 
     public RailController MyRail => _rail;
 
@@ -38,6 +40,16 @@ public class CartReceiver : MonoBehaviour
         _rail.LookAtTransform.transform.localPosition = pos;
         _redioController.LookAt(_rail.LookAtTransform);
     }
+    
+    public void SetGoMode(bool isGo)
+    {
+        _isGo = isGo;
+    }
+
+    public void SetTurnMode(bool isTurn)
+    {
+        _isTurn = isTurn;
+    }
 
     public void TurnPlayer()
     {
@@ -60,8 +72,6 @@ public class CartReceiver : MonoBehaviour
         _redioController.Sit();
     }
 
-
-
     // Update is called once per frame
     void Update()
     {
@@ -69,8 +79,8 @@ public class CartReceiver : MonoBehaviour
 
         //transform.position = m_cart.transform.position;
 
-        if (Keyboard.current.nKey.isPressed)
-        {
+        if (Keyboard.current.nKey.isPressed || _isTurn)
+        { 
             if (_redioController._isRotation == false)
             {
                 _redioController.Rotate();
@@ -79,7 +89,7 @@ public class CartReceiver : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.mKey.isPressed)
+        if (Keyboard.current.mKey.isPressed || _isGo)
         {
             _rail.Cart.m_Speed = 3 * _reverse;
         }

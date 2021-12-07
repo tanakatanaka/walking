@@ -5,15 +5,19 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameObject _cameraController;
-    [SerializeField] GameObject _dashButton;
-    [SerializeField] GameObject _jumpButton;
-    [SerializeField] List<UIController> SelectionButton;
+    [SerializeField] private GameObject _cameraController;
+    [SerializeField] private GameObject _dashButton;
+    [SerializeField] private GameObject _jumpButton;
+    [SerializeField] private List<UIController> SelectionButton;
+    [SerializeField] private UIActionButton _walkButton;
+    [SerializeField] private UIActionButton _TurnButton;
     private List<Action> _atctionList;
 
-    public void Initialize()
+    public void Initialize(CharacterManager playerManage)
     {
         HideBUtton();
+        _walkButton.Initialize(playerManage.gameObject.GetComponent<CartReceiver>());
+        _TurnButton.Initialize(playerManage.gameObject.GetComponent<CartReceiver>());
     }
 
     public void HideBUtton()

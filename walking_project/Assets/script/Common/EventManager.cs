@@ -19,7 +19,7 @@ public class EventManager : MonoBehaviour
 
     public void Initialize(CharacterManager playerManage)
     {
-        _uiManager.Initialize();
+        _uiManager.Initialize(playerManage);
         _railPointBoxes.ForEach(e =>
         {
             e?.Initialize(playerManage, _uiManager);

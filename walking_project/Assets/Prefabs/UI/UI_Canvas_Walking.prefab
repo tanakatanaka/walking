@@ -135,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5035887065514226184}
     m_Modifications:
+    - target: {fileID: 448409483032362518, guid: e6b3e0b3a1aab9d4786f335dd8a7504d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3905516997268039687, guid: e6b3e0b3a1aab9d4786f335dd8a7504d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -602,7 +606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5436236346459373004, guid: f17b612d2605c76469e1370f0fd9f7b3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 327.5
+      value: 349
       objectReference: {fileID: 0}
     - target: {fileID: 5436236346459373004, guid: f17b612d2605c76469e1370f0fd9f7b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -641,6 +645,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5035887065514226184}
     m_Modifications:
+    - target: {fileID: 448409483032362518, guid: e6b3e0b3a1aab9d4786f335dd8a7504d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2189754650236211308, guid: e6b3e0b3a1aab9d4786f335dd8a7504d, type: 3}
       propertyPath: myMode
       value: 1

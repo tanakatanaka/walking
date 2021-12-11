@@ -11,13 +11,11 @@ public class TalkBox : MonoBehaviour
     [SerializeField] private List<string> _buttonNameHashList = default;
     [SerializeField] private string _message = default;
     private bool _isTalking = false;
-    private Flowchart _flowChart;
 
     public void Initialize(CharacterManager playerManager, UIManager uiManager)
     {
         _eventBox.Initialize(playerManager, uiManager);
         _eventBox.SetCompositAction(CompositeAction);
-        _flowChart = GameManager.Instance.I_FlowChart;
     }
 
     public void TalkEvent(int selected)
@@ -41,8 +39,8 @@ public class TalkBox : MonoBehaviour
         _isTalking = true;
         //control.enabled = false;
         //player.Stop();
-        _flowChart.SendFungusMessage(_message);
-        yield return new WaitUntil(() => _flowChart.GetExecutingBlocks().Count == 0);
+        GameManager.Instance.I_FlowChart.SendFungusMessage(_message);
+        yield return new WaitUntil(() => GameManager.Instance.I_FlowChart.GetExecutingBlocks().Count == 0);
         _isTalking = false;
         //control.enabled = true;
     }

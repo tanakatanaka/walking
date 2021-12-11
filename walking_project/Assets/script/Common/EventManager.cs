@@ -8,7 +8,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private List<RailPointBox> _railPointBoxes = default;
     [SerializeField] private List<SofaBox> _sofaBoxes = default;
     [SerializeField] private List<TalkBox> _talkBoxes = default;
-    [SerializeField] UIManager _uiManager = default;
+    [SerializeField] private UIManager _uiManager = default;
 
     public class EventInfo
     {
@@ -36,6 +36,7 @@ public class EventManager : MonoBehaviour
         });
 
         _uiManager.gameObject.SetActive(true);
+        _uiManager.FadeIn();
     }
 
 }

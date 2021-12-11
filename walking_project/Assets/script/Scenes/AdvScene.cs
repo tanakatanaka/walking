@@ -5,14 +5,11 @@ using System;
 
 public class AdvScene : MonoBehaviour
 {
-    [SerializeField] private EventManager _eventManager;
-    [SerializeField] private CharacterManager _characterManager;
-
-    //public enum Menu
+    [SerializeField] private BaseScene _baseScene;
+   
     void Start()
     {
-        _characterManager.Initialize();
-        _eventManager.Initialize(_characterManager);
+        _baseScene.Initialize();
     }
 
     

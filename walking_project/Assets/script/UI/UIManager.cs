@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private List<UIController> SelectionButton;
     [SerializeField] private UIActionButton _walkButton;
     [SerializeField] private UIActionButton _TurnButton;
+    [SerializeField] private FadeController _fadeController;
+
     private List<Action> _atctionList;
 
     public void Initialize(CharacterManager playerManage)
@@ -70,6 +72,11 @@ public class UIManager : MonoBehaviour
     public void UnDisplaySelection()
     {
         SelectionButton.ForEach(b => b?.gameObject.SetActive(false));
+    }
+
+    public void FadeIn()
+    {
+        _fadeController.StartFadeIn();
     }
 
 }

@@ -9,14 +9,9 @@ public class FadeController : MonoBehaviour
     [SerializeField] string _fadeInClip;
     [SerializeField] string _fadeOutClip;
 
-    void Start()
-    {
-        _animator.Play(_fadeInClip);
-    }
-
     public void StartFadeIn()
     {
-        GetComponent<Image>().enabled = true;
+        _animator.Play(_fadeInClip);
     }
 
     // フェードイン終了後の処理

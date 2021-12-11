@@ -129,6 +129,7 @@ MonoBehaviour:
   - {fileID: 1211383779237742008}
   _walkButton: {fileID: 2075857693202042647}
   _TurnButton: {fileID: 6648457379121526613}
+  _fadeController: {fileID: 2979802709596038325}
 --- !u!1 &6155144285162149697
 GameObject:
   m_ObjectHideFlags: 0

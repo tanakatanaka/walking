@@ -11,19 +11,20 @@ public class RailPointBox : MonoBehaviour
 
     public void Initialize(CharacterManager playerManager, UIManager uiManager)
     {
+        _railManager.Initialzie();
         _eventBox.Initialize(playerManager, uiManager);
         _eventBox.SetCompositAction(CompositeAction);
     }
     
     public void MoveNextRail(int selectedCart)
     {
-        var moveAbleRails = _railManager.GetMoveAbleRails(_eventBox.PlayerManager);
+        var moveAbleRails = _railManager.GetMoveAbleRailInfoList(_eventBox.PlayerManager);
         _eventBox.PlayerManager.SetNextRail(moveAbleRails[selectedCart]);
     }
     
     public EventManager.EventInfo CompositeAction()
     {
-        var moveAbleRails = _railManager.GetMoveAbleRails(_eventBox.PlayerManager);
+        var moveAbleRails = _railManager.GetMoveAbleRailInfoList(_eventBox.PlayerManager);
         EventManager.EventInfo eventInfo = new EventManager.EventInfo();
         eventInfo._selectionCount = moveAbleRails.Count;
         eventInfo._callBackAction = MoveNextRail;

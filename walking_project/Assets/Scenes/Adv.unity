@@ -2030,6 +2030,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1017023376, guid: 632e8416340548d45a8772af804bd328, type: 3}
+      propertyPath: _reverseList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017023376, guid: 632e8416340548d45a8772af804bd328, type: 3}
+      propertyPath: _reverseList.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2052728373378052102, guid: 632e8416340548d45a8772af804bd328, type: 3}
       propertyPath: m_RootOrder
       value: 2

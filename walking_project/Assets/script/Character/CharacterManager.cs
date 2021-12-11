@@ -20,14 +20,11 @@ public class CharacterManager : MonoBehaviour
         return m_cartReceiver.IsSameCart(dollyCart);
     }
 
-    public void SetNextRail(RailController rail)
+    public void SetNextRail(RailManager.RailListInfo railInfo)
     {
-        //レール変更前
-        m_cartReceiver.TurnLookAt();
-
-        //レール変更後
-        m_cartReceiver.SetNextRail(rail);
-        m_radioController.transform.SetParent(rail.Cart.transform);
+        m_radioController.transform.SetParent(railInfo._rail.Cart.transform);
+        m_cartReceiver.SetNextRail(railInfo._rail);
+        m_cartReceiver.TurnCart(railInfo._isReverse);
         m_cartReceiver.TurnPlayer();
     }
 

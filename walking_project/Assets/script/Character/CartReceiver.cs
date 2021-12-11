@@ -31,8 +31,40 @@ public class CartReceiver : MonoBehaviour
     }
 
     public void SetNextRail(RailController nextRail) => _rail = nextRail;
-   
-    public void TurnLookAt()
+
+    public void TurnCart(bool isReverse)
+    {
+        if(isReverse)
+        {
+            _rail.Cart.m_Position = _rail.Cart.m_Path.PathLength;
+        }
+        else
+        {
+            _rail.Cart.m_Position = 0;
+        }
+
+        ForceTurnLookAt(isReverse);
+    }
+
+    private void ForceTurnLookAt(bool isReverse)
+    {
+        //íçéãì_Ç‡âÒì]ÇµÇƒÇ®Ç≠
+        Vector3 pos = _rail.LookAtTransform.localPosition;
+     
+        if (isReverse)
+        {
+            pos.z = -Mathf.Abs(pos.z);
+        }
+        else
+        {
+            pos.z = Mathf.Abs(pos.z);
+        }
+
+        _rail.LookAtTransform.transform.localPosition = pos;
+        _redioController.LookAt(_rail.LookAtTransform);
+    }
+
+    private void TurnLookAt()
     {
         //íçéãì_Ç‡âÒì]ÇµÇƒÇ®Ç≠
         Vector3 pos = _rail.LookAtTransform.localPosition;

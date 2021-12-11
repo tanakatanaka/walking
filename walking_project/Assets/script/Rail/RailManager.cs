@@ -7,13 +7,38 @@ public class RailManager : MonoBehaviour
 {
     private Transform _playerTransform;
     [SerializeField] private List<RailController> _rails = default;
-
-    public List<RailController> Rails => _rails;
-
-    public List<RailController> GetMoveAbleRails(CharacterManager playerManager)
+    [SerializeField] private List<bool> _reverseList = default;
+    private List<RailListInfo> _railInfoList;
+        
+    public class RailListInfo
     {
-        return _rails.FindAll(c => !playerManager.IsMyaCart(c.Cart));
+        public RailController _rail;
+        public bool _isReverse;
+    };
+
+    public void Initialzie()
+    {
+        _railInfoList = new List<RailListInfo>();
+
+        for (int i = 0; i < _rails.Count; i++)
+        {
+            var tmp = new RailListInfo();
+            tmp._rail = _rails[i];
+            tmp._isReverse = _reverseList[i];
+            _railInfoList.Add(tmp);
+        }
     }
+
+    public List<RailListInfo> GetMoveAbleRailInfoList(CharacterManager playerManager)
+    {
+        return _railInfoList.FindAll(c => !playerManager.IsMyaCart(c._rail.Cart));
+    }
+
+    public bool IsReverseRail(int index)
+    {
+        return _reverseList[index];
+    }
+
 
     public List<string> GetRailsHashNameList()
     {

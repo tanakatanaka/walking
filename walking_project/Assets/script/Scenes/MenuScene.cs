@@ -6,6 +6,7 @@ using System;
 public class MenuScene : MonoBehaviour
 {
     [SerializeField] private List<MenuBox> m_menuBoxes;
+    [SerializeField] private BaseScene _baseScene;
 
     public enum modeSate
     {
@@ -18,16 +19,9 @@ public class MenuScene : MonoBehaviour
 
     private modeSate m_Mode;
 
-    //public enum Menu
     void Start()
     {
-        m_Mode = modeSate.NONE;
-        
-        //‘I‘ðƒ{ƒ^ƒ“‚Ì‰Šú‰»
-        m_menuBoxes.ForEach(item =>
-       {
-           item.Initialized(ChangeMode);
-        });
+        _baseScene.Initialize();
     }
 
     public void ChangeMode(modeSate mode)

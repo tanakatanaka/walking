@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
+using BayatGames.SaveGameFree.Examples;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,13 +13,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SceneController _sceneController;
     [SerializeField] private MusicPlayer _musicPlayer;
     [SerializeField] private Flowchart _flowChart;
-    [SerializeField] private SaveManager _saveManager;
+    [SerializeField] private SaveController _saveController;
 
     public TextManager I_TextManager => _textManager;
     public SceneController I_SceneController => _sceneController;
     public MusicPlayer I_MusicPlayer => _musicPlayer;
     public Flowchart I_FlowChart => _flowChart;
-    public SaveManager I_SaveManager => _saveManager;
+    public SaveController I_SaveController => _saveController;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
 
         if (_sceneController.IsCurrentScene("Boot"))
         {
-            _sceneController.JumpNextScene("Adv");
+            _sceneController.JumpNextScene("Menu");
+            _sceneController.LoadScenePrefab("menu_scene");
         }
     }
 

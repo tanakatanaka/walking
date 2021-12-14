@@ -5,7 +5,7 @@ using BayatGames.SaveGameFree.Types;
 
 namespace BayatGames.SaveGameFree.Examples
 {
-    public class SaveManager : MonoBehaviour
+    public class SaveController : MonoBehaviour
     {
         [System.Serializable]
         public class StorageSG

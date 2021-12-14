@@ -11,6 +11,9 @@ public class BaseScene : MonoBehaviour
     //public enum Menu
     public void Initialize()
     {
+        _eventManager = GameObject.Find("event_manager").GetComponent<EventManager>();
+        _characterManager = GameObject.Find("PlayerArmature").GetComponent<CharacterManager>();
+
         _characterManager.Initialize();
         _eventManager.Initialize(_characterManager);
     }

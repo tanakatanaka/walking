@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-    private List<string> PrevSceneList;
+    private List<string> _prevSceneList;
+    private GameObject _scenePrefab;
 
     public void Initialize()
     {
-        PrevSceneList = new List<string>();
+        _prevSceneList = new List<string>();
         var scene = SceneManager.GetActiveScene();
     }
 
     public void JumpNextScene(string sceneName)
     {
-        PrevSceneList.Add(sceneName);
+        _prevSceneList.Add(sceneName);
         SceneManager.LoadScene(sceneName);
     }
 
@@ -23,4 +24,14 @@ public class SceneController : MonoBehaviour
     {
         return sceneName == SceneManager.GetActiveScene().name;
     }
+
+    public void LoadScenePrefab(string SceneName)
+    {
+        var loadPath = "Prefabs/Scenes/";
+        _scenePrefab = Instantiate (Resources.Load(loadPath + SceneName) )as GameObject;
+        _scenePrefab.transform.SetParent(transform);
+    }
+
+    
+
 }

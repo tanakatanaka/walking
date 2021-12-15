@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
+    [SerializeField] private GameObject _sceneParent = default;
     private List<string> _prevSceneList;
-    private GameObject _scenePrefab;
 
     public void Initialize()
     {
@@ -27,9 +27,14 @@ public class SceneController : MonoBehaviour
 
     public void LoadScenePrefab(string SceneName)
     {
-        var loadPath = "Prefabs/Scenes/";
-        _scenePrefab = Instantiate (Resources.Load(loadPath + SceneName) )as GameObject;
-        _scenePrefab.transform.SetParent(transform);
+        var objName = SceneName + "_scene_obj";
+        var target = GameObject.Find(objName);
+
+        var loadPath = "Prefabs/SceneObj/" + objName;
+        if (target != null) return;
+
+        var  scneObj = Instantiate (Resources.Load(loadPath) )as GameObject;
+        scneObj.transform.SetParent(_sceneParent.transform);
     }
 
     

@@ -38,10 +38,10 @@ public class GameManager : MonoBehaviour
         _sceneController.Initialize();
         _musicPlayer.Initialize();
 
-        if (_sceneController.IsCurrentScene("Boot"))
+        if (_sceneController.IsCurrentScene("boot"))
         {
-            _sceneController.JumpNextScene("Menu");
-            _sceneController.LoadScenePrefab("menu_scene");
+            _sceneController.JumpNextScene("menu");
+            //_sceneController.LoadScenePrefab("menu");
         }
     }
 

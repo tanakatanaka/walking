@@ -8,7 +8,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private List<RailPointBox> _railPointBoxes = default;
     [SerializeField] private List<SofaBox> _sofaBoxes = default;
     [SerializeField] private List<TalkBox> _talkBoxes = default;
-    private UIManager _uiManager;
+    [SerializeField] private UIManager _uiManager = default;
 
     public class EventInfo
     {
@@ -19,8 +19,6 @@ public class EventManager : MonoBehaviour
 
     public void Initialize(CharacterManager playerManage)
     {
-        _uiManager = GameObject.Find("UI_Canvas_Walking").GetComponent<UIManager>();
-
         _uiManager.Initialize(playerManage);
         _railPointBoxes.ForEach(e =>
         {

@@ -22,12 +22,12 @@ public class MenuScene : MonoBehaviour
     void Start()
     {
         _baseScene.Initialize();
-    }
 
-    public void ChangeMode(modeSate mode)
-    {
-        m_Mode = mode;
+
     }
+        
+
+  
 
 
     

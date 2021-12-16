@@ -17,14 +17,21 @@ public class UIManager : MonoBehaviour
 
     public void Initialize(CharacterManager playerManage)
     {
-        HideBUtton();
+        HideButton();
         _walkButton.Initialize(playerManage.gameObject.GetComponent<CartReceiver>());
         _TurnButton.Initialize(playerManage.gameObject.GetComponent<CartReceiver>());
     }
 
-    public void HideBUtton()
+    public void HideButton()
     {
         SelectionButton.ForEach(b => b?.gameObject.SetActive(false));
+    }
+
+    public void HideAll()
+    {
+        SelectionButton.ForEach(b => b?.gameObject.SetActive(false));
+        _dashButton.SetActive(false);
+        _jumpButton.SetActive(false);
     }
 
     public void DisplaySelection(EventManager.EventInfo eventInfo)
@@ -77,6 +84,11 @@ public class UIManager : MonoBehaviour
     public void FadeIn()
     {
         _fadeController.StartFadeIn();
+    }
+
+    public void FadeOut()
+    {
+        _fadeController.StartFadeOut();
     }
 
 }

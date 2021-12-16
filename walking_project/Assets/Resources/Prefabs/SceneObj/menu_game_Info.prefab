@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventBox: {fileID: 4338702785453600213}
-  _railManager: {fileID: 0}
+  _railManager: {fileID: 6616096032411500735}
 --- !u!1 &4559047108532528136
 GameObject:
   m_ObjectHideFlags: 0

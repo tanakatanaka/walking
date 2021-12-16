@@ -11,7 +11,14 @@ public class FadeController : MonoBehaviour
 
     public void StartFadeIn()
     {
+        this.gameObject.SetActive(true);
         _animator.Play(_fadeInClip);
+    }
+
+    public void StartFadeOut()
+    {
+        this.gameObject.SetActive(true);
+        _animator.Play(_fadeOutClip);
     }
 
     // フェードイン終了後の処理

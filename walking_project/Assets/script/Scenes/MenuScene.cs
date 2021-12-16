@@ -21,9 +21,16 @@ public class MenuScene : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(Initialize());
+    }
+
+    IEnumerator Initialize()
+    {
         _baseScene.Initialize();
-
-
+        yield return null;
+        _baseScene.MenuAction();
+        yield return null;
+        _baseScene.InitializeCompleteAction();
     }
         
 

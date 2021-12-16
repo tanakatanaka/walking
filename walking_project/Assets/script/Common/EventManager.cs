@@ -20,6 +20,7 @@ public class EventManager : MonoBehaviour
     public void Initialize(CharacterManager playerManage)
     {
         _uiManager.Initialize(playerManage);
+
         _railPointBoxes.ForEach(e =>
         {
             e?.Initialize(playerManage, _uiManager);
@@ -36,7 +37,22 @@ public class EventManager : MonoBehaviour
         });
 
         _uiManager.gameObject.SetActive(true);
+        _uiManager.FadeOut();
+    }
+
+    public void ChangeMenuMode()
+    {
+        _uiManager.HideAll();
+    }
+
+
+
+    public void InitializeCompleteAction()
+    {
         _uiManager.FadeIn();
     }
+
+
+
 
 }

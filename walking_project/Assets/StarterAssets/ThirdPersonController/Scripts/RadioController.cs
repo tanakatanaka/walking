@@ -124,6 +124,9 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
+            //座っている時は操作を受け付けない
+            if (_sit) return;
+
             if (_isRotation)
             {
                 _sec += Time.deltaTime;

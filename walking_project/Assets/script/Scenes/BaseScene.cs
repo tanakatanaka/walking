@@ -15,5 +15,17 @@ public class BaseScene : MonoBehaviour
         _eventManager.Initialize(_characterManager);
     }
 
-    
+    //menu処理を行うシーケンス
+    public void MenuAction()
+    {
+        _characterManager.SitTheSheet();
+        _eventManager.ChangeMenuMode();
+    }
+
+    public void InitializeCompleteAction()
+    {
+        _eventManager.InitializeCompleteAction();
+    }
+
+
 }

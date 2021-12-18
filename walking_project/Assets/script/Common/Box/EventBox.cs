@@ -8,7 +8,7 @@ public class EventBox : MonoBehaviour
 {
     private CharacterManager _playerManager;
     private Action<EventManager.EventInfo> _callBackEvent;
-    private UIManager _uiManager;
+    private UIWalking _uiManager;
     private bool _isBusy = true;
     private int _actionSize;
     private Func<EventManager.EventInfo> _compositeFunc;
@@ -16,7 +16,7 @@ public class EventBox : MonoBehaviour
     public bool IsBusy => _isBusy;
     public CharacterManager PlayerManager => _playerManager;
 
-    public void Initialize(CharacterManager playerManager, UIManager uiManager)
+    public void Initialize(CharacterManager playerManager, UIWalking uiManager)
     {
         _playerManager = playerManager;
         _uiManager = uiManager;

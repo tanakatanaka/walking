@@ -10,7 +10,7 @@ public class SofaBox : MonoBehaviour
     [SerializeField] private List<string> _buttonNameHashList = default;
     [SerializeField] private GameObject _targetObj = default;
 
-    public void Initialize(CharacterManager playerManager, UIManager uiManager)
+    public void Initialize(CharacterManager playerManager, UIWalking uiManager)
     {
         _eventBox.Initialize(playerManager, uiManager);
         _eventBox.SetCompositAction(CompositeAction);

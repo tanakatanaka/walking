@@ -5,80 +5,38 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _cameraController;
-    [SerializeField] private GameObject _dashButton;
-    [SerializeField] private GameObject _jumpButton;
-    [SerializeField] private List<UIController> SelectionButton;
-    [SerializeField] private UIActionButton _walkButton;
-    [SerializeField] private UIActionButton _TurnButton;
+    [SerializeField] private UIMenu _originUiMenu = default;
+    [SerializeField] public UIWalking _originUiWalking = default;
     [SerializeField] private FadeController _fadeController;
 
-    private List<Action> _atctionList;
+    private UIMenu _uiMenu = null;
+    private UIWalking _uiWalking = null;
+    private CharacterManager _playerManage;
+
+    public UIWalking GetUIWalking()
+    {
+        if (_uiWalking == null) SetUpUIWalking();
+        return _uiWalking;
+    }
+
 
     public void Initialize(CharacterManager playerManage)
     {
-        HideButton();
-        _walkButton.Initialize(playerManage.gameObject.GetComponent<CartReceiver>());
-        _TurnButton.Initialize(playerManage.gameObject.GetComponent<CartReceiver>());
+        _playerManage = playerManage;
     }
 
-    public void HideButton()
+    private void SetUpUIMenu()
     {
-        SelectionButton.ForEach(b => b?.gameObject.SetActive(false));
+        _uiWalking = Instantiate(_originUiWalking, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+        _uiWalking.Initialize(_playerManage);
+        _uiWalking.transform.SetParent(transform);
     }
 
-    public void HideAll()
+    public void SetUpUIWalking()
     {
-        SelectionButton.ForEach(b => b?.gameObject.SetActive(false));
-        _dashButton.SetActive(false);
-        _jumpButton.SetActive(false);
-    }
-
-    public void DisplaySelection(EventManager.EventInfo eventInfo)
-    {
-        int i = 0;
-        DisplayButton(eventInfo._selectionCount);
-
-        SelectionButton.ForEach(b =>
-        {
-            if (b.gameObject.activeSelf)
-            {
-                b?.SetButtonNumber(i);
-                b?.SetButtonText(eventInfo._textHashList[i]);
-                b?.SetButtonAction(eventInfo._callBackAction);
-                i++;
-                if (i >= eventInfo._selectionCount) return;
-            }
-        }
-        );
-    }
-
-    private void DisplayButton(int buttonCount)
-    {
-        if(buttonCount == 1)
-        {
-            SelectionButton[0].gameObject.SetActive(false);
-            SelectionButton[1].gameObject.SetActive(true);
-            SelectionButton[2].gameObject.SetActive(false);
-        }
-        else if (buttonCount == 2)
-        {
-            SelectionButton[0].gameObject.SetActive(true);
-            SelectionButton[1].gameObject.SetActive(false);
-            SelectionButton[2].gameObject.SetActive(true);
-        }
-        else if (buttonCount == 3)
-        {
-            SelectionButton[0].gameObject.SetActive(true);
-            SelectionButton[1].gameObject.SetActive(true);
-            SelectionButton[2].gameObject.SetActive(true);
-        }
-    }
-
-
-    public void UnDisplaySelection()
-    {
-        SelectionButton.ForEach(b => b?.gameObject.SetActive(false));
+        _uiWalking = Instantiate(_originUiWalking, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+        _uiWalking.Initialize(_playerManage);
+        _uiWalking.transform.SetParent(transform);
     }
 
     public void FadeIn()
@@ -90,5 +48,6 @@ public class UIManager : MonoBehaviour
     {
         _fadeController.StartFadeOut();
     }
+
 
 }

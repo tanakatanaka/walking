@@ -19,7 +19,6 @@ public class BaseScene : MonoBehaviour
     public void MenuAction()
     {
         _characterManager.SitTheSheet();
-        _eventManager.ChangeMenuMode();
     }
 
     public void InitializeCompleteAction()

@@ -9,7 +9,7 @@ public class RailPointBox : MonoBehaviour
     [SerializeField] private EventBox _eventBox = default;
     [SerializeField] private RailManager _railManager;
 
-    public void Initialize(CharacterManager playerManager, UIManager uiManager)
+    public void Initialize(CharacterManager playerManager, UIWalking uiManager)
     {
         _railManager.Initialzie();
         _eventBox.Initialize(playerManager, uiManager);

@@ -20,32 +20,26 @@ public class EventManager : MonoBehaviour
     public void Initialize(CharacterManager playerManage)
     {
         _uiManager.Initialize(playerManage);
-
+        _uiManager.SetUpUIWalking();
+        var uiWalking = _uiManager.GetUIWalking();
         _railPointBoxes.ForEach(e =>
         {
-            e?.Initialize(playerManage, _uiManager);
+            e?.Initialize(playerManage, uiWalking);
         });
 
         _sofaBoxes.ForEach(e =>
         {
-            e?.Initialize(playerManage, _uiManager);
+            e?.Initialize(playerManage, uiWalking);
         });
 
         _talkBoxes.ForEach(e =>
         {
-            e?.Initialize(playerManage, _uiManager);
+            e?.Initialize(playerManage, uiWalking);
         });
 
         _uiManager.gameObject.SetActive(true);
         _uiManager.FadeOut();
     }
-
-    public void ChangeMenuMode()
-    {
-        _uiManager.HideAll();
-    }
-
-
 
     public void InitializeCompleteAction()
     {

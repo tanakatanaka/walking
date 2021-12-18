@@ -12,7 +12,7 @@ public class TalkBox : MonoBehaviour
     [SerializeField] private string _message = default;
     private bool _isTalking = false;
 
-    public void Initialize(CharacterManager playerManager, UIManager uiManager)
+    public void Initialize(CharacterManager playerManager, UIWalking uiManager)
     {
         _eventBox.Initialize(playerManager, uiManager);
         _eventBox.SetCompositAction(CompositeAction);

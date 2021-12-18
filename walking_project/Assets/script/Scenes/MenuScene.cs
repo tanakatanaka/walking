@@ -5,7 +5,6 @@ using System;
 
 public class MenuScene : MonoBehaviour
 {
-    [SerializeField] private List<MenuBox> m_menuBoxes;
     [SerializeField] private BaseScene _baseScene;
 
     public enum modeSate
@@ -17,16 +16,16 @@ public class MenuScene : MonoBehaviour
         Exit,
     }
 
-    private modeSate m_Mode;
+    private modeSate m_Mode = modeSate.NONE;
 
     void Start()
     {
+        _baseScene.Initialize();
         StartCoroutine(Initialize());
     }
 
     IEnumerator Initialize()
     {
-        _baseScene.Initialize();
         yield return null;
         _baseScene.MenuAction();
         yield return null;

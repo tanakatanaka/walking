@@ -3588,7 +3588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rails:
   - {fileID: 8496082646809547543}
-  _reverseList: 000000
+  _reverseList: 00
 --- !u!54 &8394714399976513059
 Rigidbody:
   m_ObjectHideFlags: 0

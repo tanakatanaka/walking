@@ -19,24 +19,29 @@ public class UIManager : MonoBehaviour
         return _uiWalking;
     }
 
+    public void SetActiveUiWalking(bool isActive)
+    {
+        _uiWalking?.gameObject.SetActive(isActive);
+    }
 
     public void Initialize(CharacterManager playerManage)
     {
         _playerManage = playerManage;
     }
 
-    private void SetUpUIMenu()
+    public void SetUpUIMenu(bool isActive = true)
     {
-        _uiWalking = Instantiate(_originUiWalking, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-        _uiWalking.Initialize(_playerManage);
-        _uiWalking.transform.SetParent(transform);
+        _uiMenu = Instantiate(_originUiMenu, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+        _uiMenu.Initialize();
+        _uiMenu.transform.SetParent(transform);
     }
 
-    public void SetUpUIWalking()
+    public void SetUpUIWalking(bool isActive = true)
     {
         _uiWalking = Instantiate(_originUiWalking, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
         _uiWalking.Initialize(_playerManage);
         _uiWalking.transform.SetParent(transform);
+        SetActiveUiWalking(isActive);
     }
 
     public void FadeIn()

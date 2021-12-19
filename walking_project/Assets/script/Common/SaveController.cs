@@ -7,37 +7,23 @@ namespace BayatGames.SaveGameFree.Examples
 {
     public class SaveController : MonoBehaviour
     {
-        [System.Serializable]
-        public class StorageSG
-        {
-            public System.DateTime myDateTime;
+        private string _encodePassword;
 
-            public StorageSG()
-            {
-                myDateTime = System.DateTime.UtcNow;
-            }
+        public GameInfo.GameData _targetData;
+        public bool loadOnStart = true;
+        public string identifier = "exampleSavePosition.dat";
+
+        public void Save()
+        {
+            SaveGame.Save<GameInfo.GameData>(identifier, _targetData, SerializerDropdown.Singleton.ActiveSerializer);
         }
-        public class SaveInfo : MonoBehaviour
+
+        public void Load()
         {
-            private string _encodePassword;
-
-            public Transform target;
-            public bool loadOnStart = true;
-            public string identifier = "exampleSavePosition.dat";
-
-            public void Save()
-            {
-                SaveGame.Save<Vector3Save>(identifier, target.position, SerializerDropdown.Singleton.ActiveSerializer);
-            }
-
-            public void Load()
-            {
-                target.position = SaveGame.Load<Vector3Save>(
-                    identifier,
-                    Vector3.zero,
-                    SerializerDropdown.Singleton.ActiveSerializer);
-            }
-
+            _targetData = SaveGame.Load<GameInfo.GameData>(
+                identifier,
+                new GameInfo.GameData(),
+                SerializerDropdown.Singleton.ActiveSerializer);
         }
     }
 }

@@ -7,7 +7,7 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject _sceneParent = default;
     private List<string> _prevSceneList;
-
+    
     public void Initialize()
     {
         _prevSceneList = new List<string>();

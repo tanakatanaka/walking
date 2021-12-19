@@ -20,7 +20,7 @@ public class EventManager : MonoBehaviour
     public void Initialize(CharacterManager playerManage)
     {
         _uiManager.Initialize(playerManage);
-        _uiManager.SetUpUIWalking();
+        _uiManager.SetUpUIWalking(false);
         var uiWalking = _uiManager.GetUIWalking();
         _railPointBoxes.ForEach(e =>
         {
@@ -39,6 +39,16 @@ public class EventManager : MonoBehaviour
 
         _uiManager.gameObject.SetActive(true);
         _uiManager.FadeOut();
+    }
+
+    public void InitializeMenu()
+    {
+        _uiManager.SetUpUIMenu();
+    }
+
+    public void InitializeAdv()
+    {
+        _uiManager.SetUpUIWalking();
     }
 
     public void InitializeCompleteAction()

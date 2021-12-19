@@ -15,10 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/adv.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
   - enabled: 1
-    path: Assets/Scenes/House.unity
+    path: Assets/Scenes/room.unity
     guid: ccd103c3c3594924ea665370615c8808
   - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: a285378abda78d14c803a343a919c8fd
+  - enabled: 1
+    path: Assets/Scenes/house.unity
+    guid: fd59d31cf22943949aa01678d072a66e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

@@ -3,20 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MenuScene : MonoBehaviour
+public class HouseScene : MonoBehaviour
 {
     [SerializeField] private BaseScene _baseScene;
-
-    public enum modeSate
-    {
-        NONE,
-        ADV,
-        MUSIC_GAME,
-        MENU,
-        Exit,
-    }
-
-    private modeSate m_Mode = modeSate.NONE;
 
     void Start()
     {
@@ -27,7 +16,7 @@ public class MenuScene : MonoBehaviour
     IEnumerator Initialize()
     {
         yield return null;
-        _baseScene.MenuSetUp();
+        _baseScene.AdvSetUp();
         yield return null;
         _baseScene.InitializeCompleteAction();
     }

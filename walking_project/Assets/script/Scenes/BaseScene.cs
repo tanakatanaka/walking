@@ -16,9 +16,15 @@ public class BaseScene : MonoBehaviour
     }
 
     //menu処理を行うシーケンス
-    public void MenuAction()
+    public void MenuSetUp()
     {
+        _eventManager.InitializeMenu();
         _characterManager.SitTheSheet();
+    }
+
+    public void AdvSetUp()
+    {
+        _eventManager.InitializeAdv();
     }
 
     public void InitializeCompleteAction()

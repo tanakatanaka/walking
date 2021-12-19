@@ -15,11 +15,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Flowchart _flowChart;
     [SerializeField] private SaveController _saveController;
 
+    private GameInfo _gameInfo;
+    public GameInfo I_gameInfo => _gameInfo;
     public TextManager I_TextManager => _textManager;
     public SceneController I_SceneController => _sceneController;
     public MusicPlayer I_MusicPlayer => _musicPlayer;
     public Flowchart I_FlowChart => _flowChart;
-    public SaveController I_SaveController => _saveController;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +38,25 @@ public class GameManager : MonoBehaviour
         _textManager.Initialize();
         _sceneController.Initialize();
         _musicPlayer.Initialize();
+        _gameInfo = new GameInfo();
+        _gameInfo.Initialize();
 
         if (_sceneController.IsCurrentScene("boot"))
         {
             _sceneController.JumpNextScene("menu");
             //_sceneController.LoadScenePrefab("menu");
         }
+    }
+
+    public void LoadData()
+    {
+        _saveController.Load();
+        StartGame();
+    }
+    
+    public void StartGame()
+    {
+        _sceneController.JumpNextScene("house");
     }
 
     public void OnDestroy()

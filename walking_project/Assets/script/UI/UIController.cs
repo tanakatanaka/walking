@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     private Action<int> _atction;
     private int _number;
     
-    public void SetButtonText(string textHash)
+    public void SetText(string textHash)
     {
         _text.text = GameManager.Instance.I_TextManager.GetText(textHash);
     }

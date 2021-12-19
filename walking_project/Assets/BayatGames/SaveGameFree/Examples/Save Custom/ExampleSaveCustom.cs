@@ -8,7 +8,6 @@ namespace BayatGames.SaveGameFree.Examples
 
     public class ExampleSaveCustom : MonoBehaviour
     {
-
         [System.Serializable]
         public struct Level
         {

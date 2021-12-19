@@ -6,32 +6,44 @@ using UnityEngine.UI;
 
 public class UIMenu : MonoBehaviour
 {
-    [SerializeField] private Button _buttonLeft = default;
-    [SerializeField] private Button _buttonRight = default;
-    [SerializeField] private Text _Maintext = default;
+    [SerializeField] private UIController _LeftText = default;
+    [SerializeField] private UIController _RightText = default;
+    [SerializeField] private UIController _Maintext = default;
     private MenuState _menuState = MenuState.NONE;
 
     public enum MenuState
     {
         NONE = 0,
-        SELECTING,
-        LODE,
+        START,
+        LOAD,
         SAVE,
     };
 
-    public void Initialize()
+    public void Initialize(MenuState menuState = MenuState.NONE)
     {
-        //_buttonLeft.
+        if(menuState == MenuState.SAVE)
+        {
+            _menuState = MenuState.SAVE;
+            GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GameData.Mode.MENU);
+            return;
+        }
+        
+
+        _LeftText.SetText("menu_Start");
+        _RightText.SetText("menu_Load");
+        _Maintext.SetText("menu_Title");
     }
 
     public void OnCLickLeftButton()
     {
-
+        _menuState = MenuState.START;
+        GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GameData.Mode.INGAME);
     }
 
     public void OnCLickRightButton()
     {
-
+        _menuState = MenuState.LOAD;
+        GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GameData.Mode.LOAD);
     }
 
 }

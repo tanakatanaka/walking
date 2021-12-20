@@ -31,6 +31,8 @@ public class UIManager : MonoBehaviour
 
     public void SetUpUIMenu(bool isActive = true)
     {
+        if (_uiMenu != null) return;
+
         _uiMenu = Instantiate(_originUiMenu, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
         _uiMenu.Initialize();
         _uiMenu.transform.SetParent(transform);
@@ -38,9 +40,12 @@ public class UIManager : MonoBehaviour
 
     public void SetUpUIWalking(bool isActive = true)
     {
-        _uiWalking = Instantiate(_originUiWalking, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-        _uiWalking.Initialize(_playerManage);
-        _uiWalking.transform.SetParent(transform);
+        if (_uiWalking == null)
+        {
+            _uiWalking = Instantiate(_originUiWalking, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+            _uiWalking.Initialize(_playerManage);
+            _uiWalking.transform.SetParent(transform);
+        }
         SetActiveUiWalking(isActive);
     }
 

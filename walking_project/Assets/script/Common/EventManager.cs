@@ -21,6 +21,7 @@ public class EventManager : MonoBehaviour
     {
         _uiManager.Initialize(playerManage);
         _uiManager.SetUpUIWalking(false);
+
         var uiWalking = _uiManager.GetUIWalking();
         _railPointBoxes.ForEach(e =>
         {

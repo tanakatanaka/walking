@@ -15,6 +15,7 @@ namespace BayatGames.SaveGameFree.Examples
 
         public void Save()
         {
+            _targetData = GameManager.Instance.I_gameInfo.GetWorKData();
             SaveGame.Save<GameInfo.GameData>(identifier, _targetData, SerializerDropdown.Singleton.ActiveSerializer);
         }
 

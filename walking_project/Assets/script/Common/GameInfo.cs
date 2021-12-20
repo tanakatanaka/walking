@@ -12,6 +12,8 @@ public class GameInfo : MonoBehaviour
     public class GameData
     {
         public Mode _gameMode = Mode.NONE;
+        public int _degreeProgress = 0;
+
         public enum Mode
         {
             NONE,
@@ -26,6 +28,11 @@ public class GameInfo : MonoBehaviour
     {
         _workData = new GameData();
         _saveData = new GameData();
+    }
+
+    public GameData GetWorKData()
+    {
+        return _workData;
     }
 
     public void ChangeMode(GameData.Mode mode)

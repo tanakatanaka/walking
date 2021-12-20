@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 114887954507536851}
   - component: {fileID: 1965228499334016259}
   - component: {fileID: 3816814872314658478}
+  - component: {fileID: 1894698319110705789}
   m_Layer: 5
   m_Name: UI_Virtual_Button_B
   m_TagString: Untagged
@@ -134,6 +135,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1894698319110705789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138454930447782426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae66b7fdfc056204bb598d85739dcd27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 6227108727156678354}
 --- !u!1 &571925066759775436
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,8 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5b9e925fea6e443a6738e59b5d8363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LeftText: {fileID: 0}
-  _RightText: {fileID: 0}
+  _LeftText: {fileID: 8311918023270506095}
+  _RightText: {fileID: 1894698319110705789}
   _Maintext: {fileID: 3732859131604841689}
 --- !u!1 &4423681249658967624
 GameObject:

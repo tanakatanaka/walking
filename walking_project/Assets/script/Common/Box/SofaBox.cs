@@ -16,16 +16,16 @@ public class SofaBox : MonoBehaviour
         _eventBox.SetCompositAction(CompositeAction);
     }
 
-    public void SitTheChair(int selected)
+    public void SaveData(int selected)
     {
-        _eventBox.PlayerManager.SitTheSheet();
+        GameManager.Instance.SaveData();
     }
 
     public EventManager.EventInfo CompositeAction()
     {
         EventManager.EventInfo eventInfo = new EventManager.EventInfo();
         eventInfo._selectionCount = 1;
-        eventInfo._callBackAction = SitTheChair;
+        eventInfo._callBackAction = SaveData;
         eventInfo._textHashList = _buttonNameHashList;
         return eventInfo;
     }

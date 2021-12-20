@@ -53,7 +53,12 @@ public class GameManager : MonoBehaviour
         _saveController.Load();
         StartGame();
     }
-    
+
+    public void SaveData()
+    {
+        _saveController.Save();
+    }
+
     public void StartGame()
     {
         _sceneController.JumpNextScene("house");

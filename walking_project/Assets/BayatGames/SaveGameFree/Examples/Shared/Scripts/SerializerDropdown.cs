@@ -17,6 +17,11 @@ namespace BayatGames.SaveGameFree.Examples
         {
             get
             {
+                if(m_Singleton == null)
+                {
+                    m_Singleton = new SerializerDropdown();
+                }
+
                 return m_Singleton;
             }
         }
@@ -35,7 +40,7 @@ namespace BayatGames.SaveGameFree.Examples
             {
                 if (m_ActiveSerializer == null)
                 {
-                    m_ActiveSerializer = new SaveGameJsonSerializer();
+                    Awake();
                 }
                 return m_ActiveSerializer;
             }

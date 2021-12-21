@@ -228,6 +228,36 @@ MonoBehaviour:
   _railNameHash: rail_home
   m_cart: {fileID: 1147691437}
   _lookAtTransform: {fileID: 1458569578}
+--- !u!1 &109742188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109742189}
+  m_Layer: 0
+  m_Name: DollyLookAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &109742189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109742188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1215146555}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260035583
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,13 +273,14 @@ GameObject:
   - component: {fileID: 260035587}
   - component: {fileID: 260035586}
   - component: {fileID: 260035585}
+  - component: {fileID: 260035591}
   m_Layer: 0
   m_Name: rail_point_cube_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &260035584
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260035583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.96, z: 4}
+  m_LocalPosition: {x: -7.52, y: 6.1, z: 15.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5608155716774335909}
@@ -277,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventBox: {fileID: 260035586}
-  _railManager: {fileID: 8366955589648298634}
+  _railManager: {fileID: 260035591}
 --- !u!114 &260035586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +399,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260035583}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &260035591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260035583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa4f57c3bf3eef4ba407838da1e0145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rails:
+  - {fileID: 104843772}
+  - {fileID: 910949522}
+  _reverseList: 0100
+--- !u!1 &367937511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367937513}
+  - component: {fileID: 367937512}
+  m_Layer: 0
+  m_Name: DollyTrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &367937512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367937511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a200b19ca1a9685429ed7e043c28e904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Resolution: 20
+  m_Appearance:
+    pathColor: {r: 0, g: 1, b: 0, a: 1}
+    inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    width: 0.2
+  m_Looped: 0
+  m_Waypoints:
+  - position: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -11.632573, y: 0, z: -3.4516664}
+    roll: 0
+  - position: {x: -9.929387, y: 0, z: -9.212225}
+    roll: 0
+  - position: {x: 23.930046, y: 0, z: -9.128602}
+    roll: 0
+--- !u!4 &367937513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367937511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 910949521}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &380839904
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +497,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380839904}
-  m_LocalRotation: {x: 0.012181651, y: -0.96728873, z: 0.047336284, w: 0.24892473}
+  m_LocalRotation: {x: 0.012254365, y: -0.9678441, z: 0.04809422, w: 0.24660575}
   m_LocalPosition: {x: 0.00002670288, y: 0.0000007748604, z: -0.00000047683716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -417,6 +522,54 @@ MonoBehaviour:
   m_PositionUnits: 1
   m_Speed: 0
   m_Position: 0
+--- !u!1 &910949520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910949521}
+  - component: {fileID: 910949522}
+  m_Layer: 0
+  m_Name: rail_controller_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910949521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910949520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.96, y: 5.72, z: 7.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 367937513}
+  - {fileID: 1215146555}
+  m_Father: {fileID: 1418923383147698724}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910949522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910949520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _railNameHash: rail_home
+  m_cart: {fileID: 1215146556}
+  _lookAtTransform: {fileID: 109742189}
 --- !u!1 &1147691435
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +594,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147691435}
-  m_LocalRotation: {x: 0.023620985, y: -0.07855993, z: 0.0018619418, w: 0.99662775}
+  m_LocalRotation: {x: 0.022003613, y: -0.07502425, z: 0.0016558757, w: 0.99693763}
   m_LocalPosition: {x: 0.00002670288, y: 0.0000007748604, z: -0.00000047683716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -462,6 +615,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1796556144}
+  m_UpdateMethod: 0
+  m_PositionUnits: 1
+  m_Speed: 0
+  m_Position: 0
+--- !u!1 &1215146554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1215146555}
+  - component: {fileID: 1215146556}
+  m_Layer: 0
+  m_Name: DollyCart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1215146555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215146554}
+  m_LocalRotation: {x: -0, y: -0.7695187, z: -0, w: 0.63862437}
+  m_LocalPosition: {x: 0.000008583069, y: 0.00000047683716, z: -0.000021457672}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 109742189}
+  m_Father: {fileID: 910949521}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1215146556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215146554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Path: {fileID: 367937512}
   m_UpdateMethod: 0
   m_PositionUnits: 1
   m_Speed: 0
@@ -561,9 +763,13 @@ MonoBehaviour:
     roll: 0
   - position: {x: -4.8, y: 0, z: -12.02}
     roll: 0
-  - position: {x: -4.8000016, y: -4.01, z: -20.178814}
+  - position: {x: -6.2758937, y: -4.01, z: -20.17879}
     roll: 0
-  - position: {x: -4.800003, y: -4.381353, z: -28.337627}
+  - position: {x: -4.9243464, y: -4.3813534, z: -28.337654}
+    roll: 0
+  - position: {x: 19.394833, y: -4.7527065, z: -29.694866}
+    roll: 0
+  - position: {x: 25.299334, y: -5.1240597, z: 3.9389713}
     roll: 0
 --- !u!4 &1416209481
 Transform:
@@ -633,6 +839,10 @@ PrefabInstance:
     - target: {fileID: 5373041314671384447, guid: 92fd63a7b84fc4945a477c03deb03171, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373041315024379532, guid: 92fd63a7b84fc4945a477c03deb03171, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5373041315024379533, guid: 92fd63a7b84fc4945a477c03deb03171, type: 3}
       propertyPath: m_IsActive
@@ -854,9 +1064,9 @@ MonoBehaviour:
     roll: 0
   - position: {x: 16, y: 3.5, z: 0}
     roll: 0
-  - position: {x: 16, y: 3, z: 4}
+  - position: {x: 16.000057, y: 3.1370163, z: 3.378205}
     roll: 0
-  - position: {x: 10, y: 7.57, z: 2.59}
+  - position: {x: 10.314475, y: 6.40567, z: 3.1467094}
     roll: 0
 --- !u!4 &1796556145
 Transform:
@@ -1356,6 +1566,7 @@ GameObject:
   - component: {fileID: 8945613740042374048}
   - component: {fileID: 1439558399695216608}
   - component: {fileID: 2163746380018929112}
+  - component: {fileID: 1218710644859192819}
   m_Layer: 0
   m_Name: rail_point_cube_1
   m_TagString: Untagged
@@ -1363,6 +1574,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1218710644859192819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218710644859192818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa4f57c3bf3eef4ba407838da1e0145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rails:
+  - {fileID: 8496082646809547543}
+  - {fileID: 104843772}
+  - {fileID: 1272967307}
+  _reverseList: 010000
 --- !u!1 &1271672692644097208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,6 +1675,7 @@ Transform:
   - {fileID: 4907700441456265802}
   - {fileID: 104843771}
   - {fileID: 1272967306}
+  - {fileID: 910949521}
   m_Father: {fileID: 6453548746592342767}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1740,7 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventBox: {fileID: 1439558399695216608}
-  _railManager: {fileID: 8366955589648298634}
+  _railManager: {fileID: 1218710644859192819}
 --- !u!1 &2195093971224234025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,9 +2813,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1418923383147698724}
-  - component: {fileID: 8366955589648298634}
   m_Layer: 0
-  m_Name: rail_manager
+  m_Name: rail_corrector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3245,7 +3473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369139877595630297}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 555, y: 22.55, z: 519.66}
+  m_LocalPosition: {x: 555, y: 21.55, z: 519.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5608155716774335909}
@@ -4100,23 +4328,6 @@ Transform:
   m_Father: {fileID: 2140367636936954815}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8366955589648298634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4662364255038237313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa4f57c3bf3eef4ba407838da1e0145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rails:
-  - {fileID: 8496082646809547543}
-  - {fileID: 104843772}
-  - {fileID: 1272967307}
-  _reverseList: 010000
 --- !u!54 &8394714399976513059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4315,6 +4526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _railPointBoxes:
   - {fileID: 2163746380018929112}
+  - {fileID: 260035585}
   _sofaBoxes:
   - {fileID: 1642280163949751050}
   _talkBoxes:

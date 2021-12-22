@@ -13,6 +13,10 @@ public class GameInfo : MonoBehaviour
     {
         public Mode _gameMode = Mode.NONE;
         public int _degreeProgress = 0;
+        public float masterVolume;
+        public float musicVolume;
+        public float MinValue;
+        public float masterSFXVolume;
 
         public enum Mode
         {

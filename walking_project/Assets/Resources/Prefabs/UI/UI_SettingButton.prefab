@@ -1135,7 +1135,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2761608989585787627}
         m_TargetAssemblyTypeName: UISettingPopup, Assembly-CSharp
         m_MethodName: MasterSFXVolumeChangeValue
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1401,16 +1401,16 @@ RectTransform:
   m_GameObject: {fileID: 415374288382457001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4999995, y: 2.4999995, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415374287614948892}
   m_Father: {fileID: 3044049516671341853}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 250}
+  m_SizeDelta: {x: 124, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &415374288382457005
 CanvasRenderer:
@@ -1635,7 +1635,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2761608989585787627}
         m_TargetAssemblyTypeName: UISettingPopup, Assembly-CSharp
         m_MethodName: MasterVolumeChangeValue
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1738,7 +1738,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2761608989585787627}
         m_TargetAssemblyTypeName: UISettingPopup, Assembly-CSharp
         m_MethodName: MusicVolumeChangeValue
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1867,8 +1867,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 2761608989585787627}
+        m_TargetAssemblyTypeName: UISettingPopup, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:
@@ -1953,7 +1953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 260, y: 115}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 125, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3044049516671341850
@@ -1984,8 +1984,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9bdedfa4650174106a3115624f193b99, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300006, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4

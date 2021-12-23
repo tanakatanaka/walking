@@ -289,8 +289,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: ab2cfde409d710b47b0b502877abb479, type: 3}
+    m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -580,8 +580,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: ab2cfde409d710b47b0b502877abb479, type: 3}
+    m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -823,6 +823,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5035887065514226184}
     m_Modifications:
+    - target: {fileID: 415374286946595467, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374286946595467, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287193937204, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287193937204, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287193937204, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287339688217, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287339688217, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287339688217, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287504797160, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287504797160, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374287504797160, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374288044345196, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374288044345196, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374288434916804, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415374288434916804, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3044049516671341852, guid: fc9e9f11bb7da4d4ba614bef32b4a154, type: 3}
       propertyPath: m_Name
       value: UI_SettingButton

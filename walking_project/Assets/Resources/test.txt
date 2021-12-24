@@ -4,6 +4,6 @@
 3	rail_home	Home
 4	rail_toilet	Toile
 5	rail_room	Room
-6	menu_Load	ロード
-7	menu_Start	スタート
+6	menu_Load	LOAD
+7	menu_Start	START
 8	menu_Title	The Room

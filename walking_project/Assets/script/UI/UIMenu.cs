@@ -24,7 +24,7 @@ public class UIMenu : MonoBehaviour
         if(menuState == MenuState.SAVE)
         {
             _menuState = MenuState.SAVE;
-            GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GameData.Mode.MENU);
+            GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GamePlayData.Mode.MENU);
             return;
         }
         
@@ -37,13 +37,13 @@ public class UIMenu : MonoBehaviour
     public void OnCLickLeftButton()
     {
         _menuState = MenuState.START;
-        GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GameData.Mode.INGAME);
+        GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GamePlayData.Mode.INGAME);
     }
 
     public void OnCLickRightButton()
     {
         _menuState = MenuState.LOAD;
-        GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GameData.Mode.LOAD);
+        GameManager.Instance.I_gameInfo.ChangeMode(GameInfo.GamePlayData.Mode.LOAD);
     }
 
 }

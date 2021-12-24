@@ -8,23 +8,23 @@ namespace BayatGames.SaveGameFree.Examples
     public class SaveController : MonoBehaviour
     {
         private string _encodePassword;
-        private GameInfo.GameData _targetData;
+        private GameInfo.GamePlayData _targetData;
         public bool loadOnStart = true;
         public string identifier = "exampleSavePosition.dat";
 
-        public GameInfo.GameData TargetData => _targetData;
+        public GameInfo.GamePlayData TargetData => _targetData;
 
         public void Save()
         {
             _targetData = GameManager.Instance.I_gameInfo.GetWorKData();
-            SaveGame.Save<GameInfo.GameData>(identifier, _targetData, SerializerDropdown.Singleton.ActiveSerializer);
+            SaveGame.Save<GameInfo.GamePlayData>(identifier, _targetData, SerializerDropdown.Singleton.ActiveSerializer);
         }
 
         public void Load()
         {
-            _targetData = SaveGame.Load<GameInfo.GameData>(
+            _targetData = SaveGame.Load<GameInfo.GamePlayData>(
                 identifier,
-                new GameInfo.GameData(),
+                new GameInfo.GamePlayData(),
                 SerializerDropdown.Singleton.ActiveSerializer);
 
             GameManager.Instance.I_gameInfo.SetUpPlayerData(_targetData);

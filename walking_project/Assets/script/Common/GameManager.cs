@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
         _musicPlayer.Initialize();
         _gameInfo = new GameInfo();
         _gameInfo.Initialize();
+        LoadData();
+
 
         if (_sceneController.IsCurrentScene("boot"))
         {
@@ -51,7 +53,6 @@ public class GameManager : MonoBehaviour
     public void LoadData()
     {
         _saveController.Load();
-        StartGame();
     }
 
     public void SaveData()

@@ -8,10 +8,11 @@ namespace BayatGames.SaveGameFree.Examples
     public class SaveController : MonoBehaviour
     {
         private string _encodePassword;
-
-        public GameInfo.GameData _targetData;
+        private GameInfo.GameData _targetData;
         public bool loadOnStart = true;
         public string identifier = "exampleSavePosition.dat";
+
+        public GameInfo.GameData TargetData => _targetData;
 
         public void Save()
         {
@@ -25,6 +26,8 @@ namespace BayatGames.SaveGameFree.Examples
                 identifier,
                 new GameInfo.GameData(),
                 SerializerDropdown.Singleton.ActiveSerializer);
+
+            GameManager.Instance.I_gameInfo.SetUpPlayerData(_targetData);
         }
     }
 }

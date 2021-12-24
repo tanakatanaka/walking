@@ -39,6 +39,13 @@ public class GameInfo : MonoBehaviour
         return _workData;
     }
 
+    public void SetUpPlayerData(GameData gameData)
+    {
+        _workData = gameData;
+        _saveData = gameData;
+    }
+
+
     public void ChangeMode(GameData.Mode mode)
     {
         _workData._gameMode = mode;

@@ -19,26 +19,21 @@ public class MusicPlayer : MonoBehaviour
 
     public void Initialize()
     {
-        /*
-        PlayerData.Create();
-
-        if (PlayerData.instance.masterVolume > float.MinValue)
+        var workData = GameManager.Instance.I_gameInfo.GetWorKData();
+        if (workData.masterVolume > float.MinValue)
         {
-            mixer.SetFloat("MasterVolume", PlayerData.instance.masterVolume);
-            mixer.SetFloat("MusicVolume", PlayerData.instance.musicVolume);
-            mixer.SetFloat("MasterSFXVolume", PlayerData.instance.masterSFXVolume);
+            mixer.SetFloat("MasterVolume", workData.masterVolume);
+            mixer.SetFloat("MusicVolume", workData.musicVolume);
+            mixer.SetFloat("MasterSFXVolume", workData.masterSFXVolume);
         }
         else
         {
-            mixer.GetFloat("MasterVolume", out PlayerData.instance.masterVolume);
-            mixer.GetFloat("MusicVolume", out PlayerData.instance.musicVolume);
-            mixer.GetFloat("MasterSFXVolume", out PlayerData.instance.masterSFXVolume);
-
-            PlayerData.instance.Save();
+            mixer.GetFloat("MasterVolume", out workData.masterVolume);
+            mixer.GetFloat("MusicVolume", out workData.musicVolume);
+            mixer.GetFloat("MasterSFXVolume", out workData.masterSFXVolume);
         }
 
         StartCoroutine(RestartAllStems());
-        */
     }
 
     public void SetStem(int index, AudioClip clip)

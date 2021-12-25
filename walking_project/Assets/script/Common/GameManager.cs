@@ -37,10 +37,10 @@ public class GameManager : MonoBehaviour
 
         _textManager.Initialize();
         _sceneController.Initialize();
-        _musicPlayer.Initialize();
         _gameInfo = new GameInfo();
         _gameInfo.Initialize();
         LoadData();
+        _musicPlayer.Initialize();
 
 
         if (_sceneController.IsCurrentScene("boot"))

@@ -140,7 +140,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 741936858558948752, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: stems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 741936858558948752, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: stems.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b341b9410b3c5274e8b15199f3b95fb5, type: 3}
+    - target: {fileID: 741936858558948752, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: stems.Array.data[1].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 741936858558948752, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: stems.Array.data[1].startingSpeedRatio
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086898425345594655, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086898425345594655, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086898425345594655, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5259090121116289887, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: m_RootOrder
@@ -198,6 +222,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 243000012649223816, guid: 3b7e99a6684bf49fa9bad5f4bb585fab, type: 2}
+    - target: {fileID: 8222965075241413086, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: maxVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
 --- !u!114 &201245622 stripped

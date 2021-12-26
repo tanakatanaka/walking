@@ -31,7 +31,7 @@ public class TextManager : MonoBehaviour
         var textWords = new string[rowLength, columnLength];
         for (int i = 0; i < rowLength; i++)
         {
-            var tempWords = textMessage[i].Split(new[] { "\t" }, StringSplitOptions.None);
+            var tempWords = textMessage[i].Split(new[] { "," }, StringSplitOptions.None);
             if (i == 0) continue; 
 
             TextTemplete templete = new TextTemplete();

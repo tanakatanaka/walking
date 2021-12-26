@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 1892512139}
   - component: {fileID: 1892512136}
   - component: {fileID: 1892512138}
-  - component: {fileID: 1892512137}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -123,24 +122,9 @@ MonoBehaviour:
   itemId: 0
   blockName: New Block
   description: 
-  eventHandler: {fileID: 1892512137}
+  eventHandler: {fileID: 0}
   commandList: []
   suppressAllAutoSelections: 0
---- !u!114 &1892512137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892512135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1892512138}
-  suppressBlockAutoSelect: 0
-  waitForFrames: 1
 --- !u!1 &258134496752923610
 GameObject:
   m_ObjectHideFlags: 0

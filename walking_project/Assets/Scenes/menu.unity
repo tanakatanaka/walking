@@ -383,6 +383,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 781663118120727270, guid: d2ed64e862720194ca6674709eee4691, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3085826995803797740, guid: d2ed64e862720194ca6674709eee4691, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -435,10 +439,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4109236234077067583, guid: d2ed64e862720194ca6674709eee4691, type: 3}
+      propertyPath: _buttonNameHashList.Array.data[0]
+      value: common_save
+      objectReference: {fileID: 0}
     - target: {fileID: 6129261514744591305, guid: d2ed64e862720194ca6674709eee4691, type: 3}
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 201245622}
+    - target: {fileID: 7462734069065466612, guid: d2ed64e862720194ca6674709eee4691, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462734069065466612, guid: d2ed64e862720194ca6674709eee4691, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.184
+      objectReference: {fileID: 0}
     - target: {fileID: 8838044421424590293, guid: d2ed64e862720194ca6674709eee4691, type: 3}
       propertyPath: m_IsActive
       value: 0

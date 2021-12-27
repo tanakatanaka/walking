@@ -8,3 +8,4 @@
 7,menu_Start,START
 8,menu_Title,The Room
 9,common_save,Save
+10,common_check,Check

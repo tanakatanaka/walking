@@ -8,6 +8,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private List<RailPointBox> _railPointBoxes = default;
     [SerializeField] private List<SofaBox> _sofaBoxes = default;
     [SerializeField] private List<TalkBox> _talkBoxes = default;
+    [SerializeField] private List<ObjEventBox> _objEventBoxes = default;
     [SerializeField] private UIManager _uiManager = default;
 
     public class EventInfo
@@ -34,6 +35,11 @@ public class EventManager : MonoBehaviour
         });
 
         _talkBoxes.ForEach(e =>
+        {
+            e?.Initialize(playerManage, uiWalking);
+        });
+
+        _objEventBoxes.ForEach(e =>
         {
             e?.Initialize(playerManage, uiWalking);
         });

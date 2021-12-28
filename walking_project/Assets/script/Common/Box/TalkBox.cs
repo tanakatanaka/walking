@@ -20,6 +20,8 @@ public class TalkBox : MonoBehaviour
 
     public void TalkEvent(int selected)
     {
+        if (_isTalking) return;
+
         StartCoroutine(Talk());
     }
 

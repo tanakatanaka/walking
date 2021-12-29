@@ -9,13 +9,13 @@ public class GameManager : MonoBehaviour
     static public GameManager Instance { get { return _instance; } }
     static protected GameManager _instance;
 
-    [SerializeField] private TextManager   _textManager;
-    [SerializeField] private SceneController _sceneController;
-    [SerializeField] private MusicPlayer _musicPlayer;
-    [SerializeField] private Flowchart _flowChart;
-    [SerializeField] private SaveController _saveController;
+    [SerializeField] private TextManager   _textManager = default;
+    [SerializeField] private SceneController _sceneController = default;
+    [SerializeField] private MusicPlayer _musicPlayer = default;
+    [SerializeField] private Flowchart _flowChart = default;
+    [SerializeField] private SaveController _saveController = default;
+    [SerializeField]  private GameInfo _gameInfo = default;
 
-    private GameInfo _gameInfo;
     public GameInfo I_gameInfo => _gameInfo;
     public TextManager I_TextManager => _textManager;
     public SceneController I_SceneController => _sceneController;
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
 
         _textManager.Initialize();
         _sceneController.Initialize();
-        _gameInfo = new GameInfo();
         _gameInfo.Initialize();
         LoadData();
         _musicPlayer.Initialize();

@@ -643,6 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5259090121116289887}
   - component: {fileID: 3999734708119979807}
+  - component: {fileID: 8903389147048157406}
   m_Layer: 0
   m_Name: game_manager
   m_TagString: Untagged
@@ -687,6 +688,19 @@ MonoBehaviour:
   _musicPlayer: {fileID: 8222965075241413086}
   _flowChart: {fileID: 1892512136}
   _saveController: {fileID: 1037207522807558175}
+  _gameInfo: {fileID: 8903389147048157406}
+--- !u!114 &8903389147048157406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258134496752923610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d618940d5046149a98f136d97a888c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7830086063716813463
 GameObject:
   m_ObjectHideFlags: 0

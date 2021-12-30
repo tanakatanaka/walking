@@ -7,21 +7,21 @@ using Cinemachine;
 public class ObjEventBox : MonoBehaviour
 {
     [SerializeField] private EventBox _eventBox = default;
-    [SerializeField] private Camera _camera = default;
+    [SerializeField] private GameObject _camera = default;
     [SerializeField] private List<string> _buttonNameHashList = default;
     [SerializeField] private string _message = default;
     private bool _isTalking = false;
 
     public void Initialize(CharacterManager playerManager, UIWalking uiManager)
     {
-        _camera.gameObject.SetActive(false);
+        _camera.SetActive(false);
         _eventBox.Initialize(playerManager, uiManager);
         _eventBox.SetCompositAction(CompositeAction);
     }
 
     public void TalkEvent(int selected)
     {
-        _camera.gameObject.SetActive(true);
+        _camera.SetActive(true);
         StartCoroutine(Talk());
     }
 
@@ -42,7 +42,7 @@ public class ObjEventBox : MonoBehaviour
         GameManager.Instance.I_FlowChart.SendFungusMessage(_message);
         yield return new WaitUntil(() => GameManager.Instance.I_FlowChart.GetExecutingBlocks().Count == 0);
         _isTalking = false;
-        _camera.gameObject.SetActive(false);
+        _camera.SetActive(false);
     }
 
 }

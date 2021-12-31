@@ -30,7 +30,11 @@ public class CartReceiver : MonoBehaviour
         _Initialized = true;
     }
 
-    public void SetNextRail(RailController nextRail) => _rail = nextRail;
+    public void SetNextRail(RailController nextRail)
+    {
+        _rail = nextRail;
+        transform.localPosition = new Vector3(0, 0, 0);
+    }
 
     public void TurnCart(bool isReverse)
     {

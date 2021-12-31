@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private List<SofaBox> _sofaBoxes = default;
     [SerializeField] private List<TalkBox> _talkBoxes = default;
     [SerializeField] private List<ObjEventBox> _objEventBoxes = default;
+    [SerializeField] private List<VirtualCameraBox> _virtualCameraBoxes = default;
     [SerializeField] private UIManager _uiManager = default;
 
     public class EventInfo
@@ -40,6 +41,11 @@ public class EventManager : MonoBehaviour
         });
 
         _objEventBoxes.ForEach(e =>
+        {
+            e?.Initialize(playerManage, uiWalking);
+        });
+
+        _virtualCameraBoxes.ForEach(e =>
         {
             e?.Initialize(playerManage, uiWalking);
         });

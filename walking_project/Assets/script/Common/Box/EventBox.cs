@@ -11,7 +11,8 @@ public class EventBox : MonoBehaviour
     private UIWalking _uiManager;
     private bool _isBusy = true;
     private int _actionSize;
-    private Func<EventManager.EventInfo> _compositeFunc;
+    private Func<EventManager.EventInfo> _buttonFunc;
+    private Func<EventManager.EventInfo> _forceFunc;
 
     public bool IsBusy => _isBusy;
     public CharacterManager PlayerManager => _playerManager;
@@ -23,21 +24,31 @@ public class EventBox : MonoBehaviour
         _isBusy = false;
     }
 
-    public void SetCompositAction(Func<EventManager.EventInfo> compositeFunc) => _compositeFunc = compositeFunc;
+    public void SetCompositAction(Func<EventManager.EventInfo> compositeFunc) => _buttonFunc = compositeFunc;
+    public void SetFroceAction(Func<EventManager.EventInfo> forceFunc) => _forceFunc = forceFunc;
 
     //Ç∑ÇËî≤ÇØÇƒÇ¢ÇÈèÍçáåƒÇ—èoÇ∑
     private void OnTriggerStay(Collider other)
     {
         if (_isBusy == true) return;
-        var eventInfo = _compositeFunc();
         _isBusy = true;
-        _uiManager.DisplaySelection(eventInfo);
+
+        if (_forceFunc == null)
+        {
+            var eventInfo = _buttonFunc();
+            _uiManager.DisplaySelection(eventInfo);
+        }
+        else
+        {
+            const int forceSelectIndex = 0;
+            _forceFunc()._callBackAction(forceSelectIndex);
+        }
     }
 
     //Ç∑ÇËî≤ÇØÇΩèuä‘
     private void OnTriggerExit(Collider other)
     {
-        if (_compositeFunc == null) return;
+        if (_buttonFunc == null) return;
 
         _uiManager.UnDisplaySelection();
         _isBusy = false;

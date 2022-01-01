@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
         if (_sceneController.IsCurrentScene("boot"))
         {
             _sceneController.JumpNextScene("menu");
-            //_sceneController.LoadScenePrefab("menu");
         }
     }
 
@@ -62,6 +61,11 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         _sceneController.JumpNextScene("house");
+    }
+
+    public void JumpNameScene(string name)
+    {
+        _sceneController.JumpNextScene(name);
     }
 
     public void OnDestroy()

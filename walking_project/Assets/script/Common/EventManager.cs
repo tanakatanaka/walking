@@ -18,16 +18,7 @@ public class EventManager : MonoBehaviour
         public int _selectionCount = 0;
         public Action<int> _callBackAction = null;
         public List<string> _textHashList = new List<string>();
-        public Direction _direction = Direction.ALL;
      };
-
-    public enum Direction
-    {
-        ALL,
-        NORMAL,
-        REVERSE,
-    };
-
 
     public void Initialize(CharacterManager playerManage)
     {

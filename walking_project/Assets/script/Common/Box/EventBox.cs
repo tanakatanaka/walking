@@ -6,6 +6,7 @@ using Cinemachine;
 
 public class EventBox : MonoBehaviour
 {
+    [SerializeField] private Direction _direction = default;
     private CharacterManager _playerManager;
     private Action<EventManager.EventInfo> _callBackEvent;
     private UIWalking _uiManager;
@@ -17,6 +18,13 @@ public class EventBox : MonoBehaviour
     public bool IsBusy => _isBusy;
     public CharacterManager PlayerManager => _playerManager;
 
+    public enum Direction
+    {
+        ALL,
+        NORMAL,
+        REVERSE,
+    };
+
     public void Initialize(CharacterManager playerManager, UIWalking uiManager)
     {
         _playerManager = playerManager;
@@ -27,20 +35,11 @@ public class EventBox : MonoBehaviour
     public void SetCompositAction(Func<EventManager.EventInfo> compositeFunc) => _buttonFunc = compositeFunc;
     public void SetFroceAction(Func<EventManager.EventInfo> forceFunc) => _forceFunc = forceFunc;
 
-    private bool IsCorrectDirection(EventManager.Direction direction)
+    private bool IsCorrectDirection()
     {
-        if (direction == EventManager.Direction.ALL)
-        {
-            return true;
-        }
-        else if (direction == EventManager.Direction.NORMAL && _playerManager.IsTrueDirection())
-        {
-            return true;
-        }
-        else if (direction == EventManager.Direction.REVERSE && !_playerManager.IsTrueDirection())
-        {
-            return true;
-        }
+        if (_direction == Direction.ALL) return true;
+        else if (_direction == Direction.NORMAL && _playerManager.IsTrueDirection()) return true;
+        else if (_direction == Direction.REVERSE && !_playerManager.IsTrueDirection()) return true;
 
         return false;
     }
@@ -56,13 +55,13 @@ public class EventBox : MonoBehaviour
         if (_forceFunc == null)
         {
             var eventInfo = _buttonFunc();
-            if (IsCorrectDirection(eventInfo._direction) == false) return;
+            if (IsCorrectDirection() == false) return;
             _uiManager.DisplaySelection(eventInfo);
         }
         else
         {
             var eventInfo = _forceFunc();
-            if (IsCorrectDirection(eventInfo._direction) == false) return;
+            if (IsCorrectDirection() == false) return;
 
             const int forceSelectIndex = 0;
             _forceFunc()._callBackAction(forceSelectIndex);

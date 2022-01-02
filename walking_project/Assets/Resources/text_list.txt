@@ -10,3 +10,4 @@
 9,common_save,Save
 10,common_check,Check
 11,common_home_scene,Go to House
+12,common_garden_scene,Go to Garden

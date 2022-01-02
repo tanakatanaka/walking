@@ -33,5 +33,9 @@ public class CharacterManager : MonoBehaviour
         m_cartReceiver.SitMode();
     }
 
+    public bool IsTrueDirection()
+    {
+        return m_cartReceiver.IsTrueDireciton();
+    }
 
 }

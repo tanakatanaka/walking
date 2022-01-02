@@ -23,7 +23,7 @@ public class TextManager : MonoBehaviour
     private void LoadText(string textName)
     {
         TextAsset textasset = new TextAsset(); 
-        textasset = Resources.Load("test", typeof(TextAsset)) as TextAsset; 
+        textasset = Resources.Load("text_list", typeof(TextAsset)) as TextAsset; 
         var textMessage = textasset.text.Split('\n'); 
         var columnLength = textMessage[0].Split(new[] { "\t" }, StringSplitOptions.None).Length;
         var rowLength = textMessage.Length;

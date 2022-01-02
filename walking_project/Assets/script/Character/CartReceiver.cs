@@ -103,6 +103,13 @@ public class CartReceiver : MonoBehaviour
         }
     }
 
+    public bool IsTrueDireciton()
+    {
+        if (_reverse > 0) return true;
+        return false;
+    }
+
+
     public void SitMode()
     {
         _redioController.Sit();

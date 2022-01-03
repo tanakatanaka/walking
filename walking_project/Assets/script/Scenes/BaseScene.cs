@@ -8,12 +8,15 @@ public class BaseScene : MonoBehaviour
     [SerializeField] private EventManager _eventManager;
     [SerializeField] private CharacterManager _characterManager;
 
+    public CharacterManager CharacterManager => _characterManager;
+
     //public enum Menu
     public void Initialize()
     {
         _characterManager.Initialize();
         _eventManager.Initialize(_characterManager);
     }
+
 
     //menu処理を行うシーケンス
     public void MenuSetUp()

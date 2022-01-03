@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public Flowchart I_FlowChart => _flowChart;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Instance == null)
         {
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        _sceneController.JumpNextScene("house");
+        _sceneController.JumpNextScene("garden");
     }
 
     public void JumpNameScene(string name)

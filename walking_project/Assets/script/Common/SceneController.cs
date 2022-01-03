@@ -6,17 +6,18 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject _sceneParent = default;
-    private List<string> _prevSceneList;
-    
+    private string _prevSceneName = "";
+
+    public string PrevSceneName => _prevSceneName;
+
     public void Initialize()
     {
-        _prevSceneList = new List<string>();
         var scene = SceneManager.GetActiveScene();
     }
 
     public void JumpNextScene(string sceneName)
     {
-        _prevSceneList.Add(sceneName);
+        _prevSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName);
     }
 

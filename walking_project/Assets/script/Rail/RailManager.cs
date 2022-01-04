@@ -40,10 +40,14 @@ public class RailManager : MonoBehaviour
     }
 
 
-    public List<string> GetRailsHashNameList()
+    public List<string> GetRailsHashNameList(CharacterManager playerManager)
     {
         List<string> railNameHash = new List<string>();
-          _rails.ForEach(c => railNameHash.Add(c.RailNameHash));
+        foreach (var rail in _rails)
+        {
+            if (!playerManager.IsMyaCart(rail.Cart)) railNameHash.Add(rail.RailNameHash);
+        }
+
         return railNameHash;
     }
 }

@@ -1317,6 +1317,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1316948662089688707, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: _railNameHash
+      value: rail_hut
+      objectReference: {fileID: 0}
     - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: _uiManager
       value: 
@@ -1341,6 +1345,10 @@ PrefabInstance:
       propertyPath: _virtualCameraBoxes.Array.data[1]
       value: 
       objectReference: {fileID: 910768124}
+    - target: {fileID: 3232582957908150696, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3404233305158793677, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_Lens.Dutch
       value: -9
@@ -1525,6 +1533,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: -0.03663084
       objectReference: {fileID: 0}
+    - target: {fileID: 7471080302249933928, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: _railNameHash
+      value: rail_garden
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471080302249933934, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7471080303093617116, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_Waypoints.Array.data[3].position.x
       value: 65
@@ -1544,6 +1560,14 @@ PrefabInstance:
     - target: {fileID: 7471080303362167864, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.000011444092
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471080303556445469, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471080303556445471, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: _railNameHash
+      value: rail_house
       objectReference: {fileID: 0}
     - target: {fileID: 8170680810582351518, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: _targetObj

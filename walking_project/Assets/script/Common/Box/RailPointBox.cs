@@ -28,7 +28,7 @@ public class RailPointBox : MonoBehaviour
         EventManager.EventInfo eventInfo = new EventManager.EventInfo();
         eventInfo._selectionCount = moveAbleRails.Count;
         eventInfo._callBackAction = MoveNextRail;
-        eventInfo._textHashList = _railManager.GetRailsHashNameList();
+        eventInfo._textHashList = _railManager.GetRailsHashNameList(_eventBox.PlayerManager);
         return eventInfo;
     }
 

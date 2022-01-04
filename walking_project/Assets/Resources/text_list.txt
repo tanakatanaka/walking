@@ -1,7 +1,7 @@
 #ID	Hash	Message
 1,common_talk,TALK
 2,common_sit,SIT
-3,rail_home,Home
+3,rail_house,House
 4,rail_toilet,Toile
 5,rail_room,Room
 6,menu_Load,LOAD
@@ -11,3 +11,13 @@
 10,common_check,Check
 11,common_home_scene,Go to House
 12,common_garden_scene,Go to Garden
+13,rail_hut,Hut
+14,rail_garden,Garden
+15,rail_upstairs,Upstairs
+16,rail_outside,Outside
+17,rail_garden,Garden
+18,rail_outside,Outside
+19,rail_backyard,Backyard
+20,rail_third_floor,3rd Floor
+21,rail_second_floor,2nd Floor
+22,rail_downstairs,Downstairs

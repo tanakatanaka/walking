@@ -13,10 +13,10 @@
 12,common_garden_scene,Go to Garden
 13,rail_hut,Hut
 14,rail_garden,Garden
-15,rail_upstairs,Upstairs
+15,rail_third_stairs,3rdstairs
 16,rail_outside,Outside
 17,rail_garden,Garden
-18,rail_outside,Outside
+18,rail_outside_stairs,OutsideStairs
 19,rail_backyard,Backyard
 20,rail_third_floor,3rd Floor
 21,rail_second_floor,2nd Floor

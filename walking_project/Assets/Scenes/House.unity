@@ -139,12 +139,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: blockViewHeight
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: variables.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: variables.Array.data[1]
+      value: 
+      objectReference: {fileID: 1619510248}
+    - target: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: selectedBlocks.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: selectedCommands.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1619510240}
+    - target: {fileID: 1892512136, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 1619510244}
+    - target: {fileID: 1892512138, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: blockName
+      value: test_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892512138, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: nodeRect.x
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1892512138, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: commandList.Array.size
@@ -182,6 +210,10 @@ PrefabInstance:
       propertyPath: _gameInfo
       value: 
       objectReference: {fileID: 97558734}
+    - target: {fileID: 5179174362644022399, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: storyText
+      value: "\u30C6\u30AD\u30B9\u30C81"
+      objectReference: {fileID: 0}
     - target: {fileID: 5179174362644022399, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: stopVoiceover
       value: 0
@@ -229,6 +261,14 @@ PrefabInstance:
     - target: {fileID: 5259090121116289887, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969121244485889355, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: storyText
+      value: "\u30C6\u30AD\u30B9\u30C82"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023352565402978445, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
+      propertyPath: message
+      value: test_text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
@@ -288,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _railNameHash: rail_home
+  _railNameHash: rail_third_stairs
   m_cart: {fileID: 1147691437}
   _lookAtTransform: {fileID: 1458569578}
 --- !u!1 &109742188
@@ -654,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _railNameHash: rail_home
+  _railNameHash: rail_backyard
   m_cart: {fileID: 1495725040}
   _lookAtTransform: {fileID: 970393149}
 --- !u!1001 &439127453
@@ -870,7 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _railNameHash: rail_home
+  _railNameHash: rail_third_floor
   m_cart: {fileID: 1215146556}
   _lookAtTransform: {fileID: 109742189}
 --- !u!1 &970393148
@@ -948,7 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _railNameHash: rail_home
+  _railNameHash: rail_garden
   m_cart: {fileID: 1379167527}
   _lookAtTransform: {fileID: 1417023279}
 --- !u!1001 &1118676040
@@ -1028,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6976299757260051946, guid: 12b14d59cd83d4e4cb49d01f9a259934, type: 3}
       propertyPath: _message
-      value: test2
+      value: test_text2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1419431075609953187, guid: 12b14d59cd83d4e4cb49d01f9a259934, type: 3}
@@ -1181,7 +1221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _railNameHash: rail_home
+  _railNameHash: rail_outside_stairs
   m_cart: {fileID: 380839906}
   _lookAtTransform: {fileID: 1531622038}
 --- !u!1 &1336113695
@@ -1650,17 +1690,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1892512135, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
   m_PrefabInstance: {fileID: 13618831}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1619510233 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2812588317361025147, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
-  m_PrefabInstance: {fileID: 13618831}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619510232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1619510234 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7976178590265238229, guid: 9efcfc9675093e447b0492a27d054824, type: 3}
@@ -1686,7 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 1
-  storyText: "\u3053\u3093\u3070\u3093\u306F"
+  storyText: "\u30AB\u30E1\u30E9\u4ED8\u304D\u30C6\u30AD\u30B9\u30C81"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1759,12 +1788,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 78
+    width: 104
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 15
-  blockName: test2
+  blockName: test_text2
   description: 
   eventHandler: {fileID: 1619510247}
   commandList:
@@ -1789,7 +1818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 1
-  storyText: "\u307E\u305F\u3001\u3053\u3093\u306B\u3061\u306F"
+  storyText: "\u30AB\u30E1\u30E9\u4ED8\u304D\u30C6\u30AD\u30B9\u30C82"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1848,7 +1877,7 @@ MonoBehaviour:
   itemId: 12
   indentLevel: 1
   anyVar:
-    variable: {fileID: 1619510233}
+    variable: {fileID: 1619510248}
     data:
       animatorData:
         animatorRef: {fileID: 0}
@@ -2003,7 +2032,7 @@ MonoBehaviour:
   conditions:
   - compareOperator: 0
     anyVar:
-      variable: {fileID: 1619510233}
+      variable: {fileID: 1619510248}
       data:
         animatorData:
           animatorRef: {fileID: 0}
@@ -2259,7 +2288,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1619510240}
   suppressBlockAutoSelect: 0
-  message: test2
+  message: test_text2
+--- !u!114 &1619510248
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619510232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: isFirstTimeCamera
+  value: 1
 --- !u!1 &1716118350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2670,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5608155716774335909}
     m_Modifications:
+    - target: {fileID: 2236129658370502052, guid: df1d8e7ef7b8c1640a876372c5fe5f60, type: 3}
+      propertyPath: _message
+      value: test_text
+      objectReference: {fileID: 0}
     - target: {fileID: 3882481208147990920, guid: df1d8e7ef7b8c1640a876372c5fe5f60, type: 3}
       propertyPath: m_Name
       value: Talk_cube
@@ -3211,7 +3259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f52f3cff2a7754493474e00fc3fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _railNameHash: rail_home
+  _railNameHash: rail_second_floor
   m_cart: {fileID: 4752687001755866479}
   _lookAtTransform: {fileID: 8670517149463742546}
 --- !u!1 &8531515501253102781

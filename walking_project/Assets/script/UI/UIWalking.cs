@@ -24,18 +24,20 @@ public class UIWalking : MonoBehaviour
         SelectionButton.ForEach(b => b?.gameObject.SetActive(false));
     }
 
-    public void DisplaySelection(EventManager.EventInfo eventInfo)
+    public void DisplaySelection(EventManager.EventInfo eventInfo, bool _isSelectAndOut)
     {
-        int i = 0;
-        DisplayButton(eventInfo._selectionCount);
+        var i = 0;
+        Action hideAction = null;
+        if (_isSelectAndOut) hideAction = HideButton;
 
+        DisplayButton(eventInfo._selectionCount);
         SelectionButton.ForEach(b =>
         {
             if (b.gameObject.activeSelf)
             {
                 b?.SetButtonNumber(i);
                 b?.SetText(eventInfo._textHashList[i]);
-                b?.SetButtonAction(eventInfo._callBackAction);
+                b?.SetButtonAction(eventInfo._callBackAction, hideAction);
                 i++;
                 if (i >= eventInfo._selectionCount) return;
             }

@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 0
+  _isSelectAndOut: 1
 --- !u!65 &182424014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -513,6 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 0
+  _isSelectAndOut: 1
 --- !u!65 &260035588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2765,6 +2767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 0
+  _isSelectAndOut: 1
 --- !u!114 &1627304097636107283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2979,6 +2982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 0
+  _isSelectAndOut: 0
 --- !u!1 &4662364255038237313
 GameObject:
   m_ObjectHideFlags: 0

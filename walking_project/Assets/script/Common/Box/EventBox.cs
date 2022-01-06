@@ -7,6 +7,8 @@ using Cinemachine;
 public class EventBox : MonoBehaviour
 {
     [SerializeField] private Direction _direction = default;
+    [SerializeField] private bool _isSelectAndOut = false;
+
     private CharacterManager _playerManager;
     private Action<EventManager.EventInfo> _callBackEvent;
     private UIWalking _uiManager;
@@ -44,8 +46,6 @@ public class EventBox : MonoBehaviour
         return false;
     }
 
-
-
     //‚·‚è”²‚¯‚Ä‚¢‚éê‡ŒÄ‚Ño‚·
     private void OnTriggerStay(Collider other)
     {
@@ -56,7 +56,7 @@ public class EventBox : MonoBehaviour
         {
             var eventInfo = _buttonFunc();
             if (IsCorrectDirection() == false) return;
-            _uiManager.DisplaySelection(eventInfo);
+            _uiManager.DisplaySelection(eventInfo, _isSelectAndOut);
         }
         else
         {

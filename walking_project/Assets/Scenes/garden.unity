@@ -274,6 +274,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5769689359945177364, guid: b865497d0b6b7224194878b7499fd662, type: 3}
   m_PrefabInstance: {fileID: 7471080302353954196}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &840571041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8088808021751557646, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+  m_PrefabInstance: {fileID: 7471080302353954196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca0cf3b4a1cc534099171f2a551093b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &910768124 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5773614362305122707, guid: b865497d0b6b7224194878b7499fd662, type: 3}
@@ -1372,8 +1383,12 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 649455787444363209, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 649455787444363209, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 140
+      value: 139.34
       objectReference: {fileID: 0}
     - target: {fileID: 1291109986233354981, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_IsActive
@@ -1405,7 +1420,7 @@ PrefabInstance:
       objectReference: {fileID: 304097634}
     - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: _virtualCameraBoxes.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: _virtualCameraBoxes.Array.data[0]
@@ -1423,6 +1438,14 @@ PrefabInstance:
       propertyPath: _virtualCameraBoxes.Array.data[3]
       value: 
       objectReference: {fileID: 7471080302353954198}
+    - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: _virtualCameraBoxes.Array.data[4]
+      value: 
+      objectReference: {fileID: 840571041}
+    - target: {fileID: 2708366573886183811, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.68
+      objectReference: {fileID: 0}
     - target: {fileID: 2760358196867130535, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalPosition.z
       value: 96.79
@@ -1749,11 +1772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8524900924886789031, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 8524900924886789031, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 140
+      value: 139.34
       objectReference: {fileID: 0}
     - target: {fileID: 8524900924886789031, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalRotation.x

@@ -14,9 +14,9 @@ public class GameInfo : MonoBehaviour
         public Mode _gameMode = Mode.NONE;
         public int _degreeProgress = 0;
         public bool _isFirstPlay = false;
-        public float masterVolume = 80;
-        public float musicVolume = 80;
-        public float masterSFXVolume = 80;
+        public float masterVolume = 20;
+        public float musicVolume = 20;
+        public float masterSFXVolume = 20;
 
         public enum Mode
         {

@@ -8,6 +8,7 @@ public class RailPointBox : MonoBehaviour
 {
     [SerializeField] private EventBox _eventBox = default;
     [SerializeField] private RailManager _railManager;
+    [SerializeField] private GameObject _cameraParent = default;
 
     public void Initialize(CharacterManager playerManager, UIWalking uiManager)
     {
@@ -20,6 +21,14 @@ public class RailPointBox : MonoBehaviour
     {
         var moveAbleRails = _railManager.GetMoveAbleRailInfoList(_eventBox.PlayerManager);
         _eventBox.PlayerManager.SetNextRail(moveAbleRails[selectedCart]);
+
+        if (_cameraParent == null) return;
+
+        foreach (Transform child in _cameraParent.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
     }
     
     public EventManager.EventInfo CompositeAction()

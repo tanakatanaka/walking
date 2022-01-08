@@ -243,17 +243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d618940d5046149a98f136d97a888c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &118149477 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3390114223539980790, guid: b865497d0b6b7224194878b7499fd662, type: 3}
-  m_PrefabInstance: {fileID: 7471080302353954196}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca0cf3b4a1cc534099171f2a551093b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &239989506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 278672184335193115, guid: b865497d0b6b7224194878b7499fd662, type: 3}
@@ -1431,7 +1420,7 @@ PrefabInstance:
       objectReference: {fileID: 304097634}
     - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: _virtualCameraBoxes.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: _virtualCameraBoxes.Array.data[0]
@@ -1456,7 +1445,11 @@ PrefabInstance:
     - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: _virtualCameraBoxes.Array.data[5]
       value: 
-      objectReference: {fileID: 118149477}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120461650273088616, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: _virtualCameraBoxes.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2708366573886183811, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.68
@@ -1817,6 +1810,22 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 8714213331030141849, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714213331030141849, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714213331030141849, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 139.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766731860381890636, guid: b865497d0b6b7224194878b7499fd662, type: 3}
+      propertyPath: _cameraParent
+      value: 
+      objectReference: {fileID: 563858903}
     - target: {fileID: 8852722174676074107, guid: b865497d0b6b7224194878b7499fd662, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.697

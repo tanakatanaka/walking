@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class CartReceiver : MonoBehaviour
@@ -11,6 +12,7 @@ public class CartReceiver : MonoBehaviour
     private RadioController _redioController;
     private bool _Initialized = false;
     private int _reverse = 1;
+    private bool _isAbleControll = true;
     private bool _isGo = false;
     private bool _isTurn = false;
 
@@ -28,6 +30,7 @@ public class CartReceiver : MonoBehaviour
         _redioController.MoveSpeed = _rail.Cart.m_Speed;
 
         _Initialized = true;
+        if (SceneManager.GetActiveScene().name == "menu") _isAbleControll = false;
     }
 
     public void SetNextRail(RailController nextRail)
@@ -119,6 +122,7 @@ public class CartReceiver : MonoBehaviour
     void Update()
     {
         if (_Initialized == false) return;
+        if (_isAbleControll == false) return;
 
         //transform.position = m_cart.transform.position;
 
